@@ -1,2 +1,2 @@
 # capitan
-Scaffolding scalable web applications, based on a modular and high-performance architecture workflow.
+Capitan is a Grunt-based Frontend-Workflow, providing a powerful Component System for hierarchically structuring your Webprojects.
