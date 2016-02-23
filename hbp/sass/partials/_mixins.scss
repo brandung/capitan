@@ -1,0 +1,155 @@
+@charset "utf-8";
+/**
+ * Capitan mixins.scss v2.0.0
+ *
+ * Copyright brandung GmbH & Co.KG
+ * http://www.brandung.de/
+ *
+ * Date: 2014-09-23
+ * MIT License (MIT)
+ */
+
+
+/* ==========================================================================
+   Global mixins
+   ========================================================================== */
+
+
+/**
+ * Calculate percent value to given property
+ *
+ * @param {string} $cssProperty - which property
+ * @param {number} $targetSize - element size in pixel
+ * @param {number} $contextSize - context element size in pixel
+ * @param {boolean} $important - set !important property
+ *
+ */
+@mixin calculatePercentValueOfProperty($cssProperty, $targetSize, $contextSize, $important: false) {
+	@if $important == true {
+		#{$cssProperty}: percentage($targetSize/$contextSize) !important;
+	} @else {
+		#{$cssProperty}: percentage($targetSize/$contextSize);
+	}
+}
+
+
+/**
+ * Calculate PX font size to REM
+ *
+ * - add PX fallback for older browser
+ *
+ * @param {number} $size - element size in pixel
+ * @param {number} $base - body font size in pixel
+ *
+ */
+@mixin fontSizeREM($size: $body-font-size-px, $base: $base-em) {
+	font-size: $size + px;
+	font-size: ($size / $base) + rem;
+}
+
+
+/**
+ * Calculates given px value to rem value
+ *
+ * @param {string} $prop - css property name, e.g. font-size, line-height; Default: 'font-size'
+ * @param {number} $size - size in px; Default: $body-font-size-px
+ *
+ */
+@mixin propToREM($prop: 'font-size', $size: $body-font-size-px) {
+	#{$prop}: $size + px;
+	#{$prop}: ($size / $base-em) + rem;
+}
+
+
+/**
+* Mixin for adding vendor prefixes to CSS attributes; useful for the following CSS attributes
+*
+* - border-radius
+* - box-shadow
+* - transition
+* - transform
+* - background-size
+* - box-sizing
+* - animate
+*
+* @param {string} $attribute - CSS attribute that needs vendor prefixes, e.g. border-radius or transition
+* @param {string} $value - The specific CSS value, e.g. "translateX .2s ease-out"
+*/
+$prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
+@mixin prefix($attribute, $value) {
+	@each $prefix in $prefixes {
+		#{$prefix}#{$attribute}:unquote(#{$value});
+	}
+}
+
+
+/**
+* Clearfix
+*/
+
+@mixin clearfix() {
+	&:after {
+		display: block;
+		content: ".";
+		clear: both;
+		font-size: 0;
+		line-height: 0;
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+/**
+ * Webfont mixin for global use
+ *
+ * @param {string} $family - set the font-family value
+ * @param {string} $fontWeight - set the font-family value
+ * @param {string} $fontStyle - set the font-style value
+ */
+@mixin font($family: $ff-regular, $fontWeight: normal, $fontStyle: normal) {
+	font-family: $family;
+	font-weight: $fontWeight;
+	font-style: $fontStyle;
+
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/**
+* Mixin for adding hover transition
+*
+* @param {string} $colorFX - properties for color transition
+* @param {string} $hoverColor - hover color
+* @param {string} $backgroundFX - properties for backgrounf transition
+* @param {string} $hoverBackground - hover background color
+*/
+@mixin hoverTransition($colorFX: color 0.2s linear, $hoverColor: false, $backgroundFX: background 0.2s linear, $hoverBackground: false) {
+	@include prefix(transition, ($colorFX, $backgroundFX));
+	&:hover {
+		@if $hoverColor {
+			color: $hoverColor;
+		}
+		@if $hoverBackground {
+			background: $hoverBackground;
+		}
+	}
+}
+
+
+/**
+ * Mixin for defining values at an specific mediaQuerie
+ *
+ * @param {string} $width - breakpoint from $breakpoints map
+ */
+@mixin respondMin($width) {
+	@media screen and (min-width: $width) {
+		@content;
+	}
+}
+
+@mixin respondMax($width) {
+	@media screen and (max-width: $width) {
+		@content;
+	}
+}

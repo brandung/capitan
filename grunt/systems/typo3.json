@@ -1,0 +1,17 @@
+{
+    "folder": [
+        "Resources/Private/Frontend",
+        "Resources/Public/component",
+        "Resources/Public/css",
+        "Resources/Public/font",
+        "Resources/Public/img/",
+        "Resources/Public/js/libs/bra",
+        "Resources/Public/js/libs/vendor"
+    ],
+    "private": "Resources/Private/Frontend",
+    "public": "Resources/Public",
+    "liveURL": "/typo3conf/ext/%%repo%%",
+    "route": {
+        "/typo3conf/ext/%%repo%%/Resources/": "Resources/"
+    }
+}

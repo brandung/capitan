@@ -1,0 +1,15 @@
+{
+    "folder": [
+        "src/private/frontend",
+        "src/public/component",
+        "src/public/css",
+        "src/public/font",
+        "src/public/img/",
+        "src/public/js/libs/bra",
+        "src/public/js/libs/vendor"
+    ],
+    "private": "src/private/frontend",
+    "public": "src/public",
+    "liveURL": "",
+    "route": {}
+}

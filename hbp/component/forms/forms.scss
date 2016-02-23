@@ -1,0 +1,206 @@
+@charset "utf-8";
+/**
+ * Capitan forms.scss v1.0.0
+ *
+ * Copyright brandung GmbH & Co.KG
+ * http://www.brandung.de/
+ *
+ * Date: 2014-03-14
+ * MIT License (MIT)
+ */
+
+@import '../../sass/partials/functions';
+@import '../../sass/partials/variables';
+@import '../../sass/partials/mixins';
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+::-webkit-input-placeholder {
+	color: color('placeholder');
+}
+
+::-moz-placeholder {
+	color: color('placeholder');
+}
+
+:-ms-input-placeholder {
+	color: color('placeholder');
+}
+
+.placeholder {
+	color: color('placeholder');
+}
+
+::-ms-clear {
+	display: none;
+}
+
+.input-box {
+	margin-bottom: $grid-gutter-width / 2;
+	position: relative;
+
+	label:first-child {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	.label--visible:first-child {
+		position: static;
+	}
+
+	input[type=text],
+	input[type=email],
+	input[type=number],
+	input[type=password],
+	input[type=tel],
+	input[type=url],
+	input[type=date],
+	input[type=search],
+	select,
+	textarea {
+		background: color('white');
+		padding: 12px $grid-gutter-width / 2 10px;
+		width: 100%;
+		border: solid 1px color('black');
+		@include prefix(border-radius, 0);
+
+		&:hover,
+		&:focus,
+		[readonly] {
+			background: color('grey-lightest');
+			cursor: pointer;
+		}
+
+		&:focus {
+			outline: none;
+			@include prefix(box-shadow, 0);
+			color: color('black');
+		}
+
+		&.error,
+		&.error:focus {
+			border-color: color('error');
+		}
+	}
+
+	input[type=search] {
+		@include prefix(box-sizing, border-box);
+	}
+
+	input,
+	textarea {
+		-webkit-appearance: none;
+		resize: none;
+	}
+
+	textarea {
+		min-height: 300px;
+	}
+
+	select {
+		height: 40px;
+		line-height: 36px;
+		padding: 0 $grid-gutter-width / 2;
+		color: color('placeholder');
+
+		&:focus,
+		&:hover {
+			outline: none;
+			@include prefix(box-shadow, 0);
+			color: color('placeholder');
+		}
+	}
+
+	option {
+		color: color('black');
+		@include fontSizeREM(16);
+	}
+}
+
+input,
+textarea,
+select {
+	@include prefix(transition, all .2s);
+
+	&:focus {
+		outline: none;
+	}
+}
+
+label {
+	cursor: pointer;
+}
+
+// + radios and checkboxes
+input[type="radio"],
+input[type="checkbox"] {
+	position: absolute;
+	left: -9999px;
+
+	& + label {
+		position: relative;
+		padding-left: 50px;
+		display: inline-block;
+		cursor: pointer;
+
+		&:hover,
+		.active {
+			&:before {
+				background: color('grey-lightest');
+				border-color: color('black');
+			}
+		}
+
+		&:before,
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			@include prefix(transition, all .1s ease-out);
+			@include prefix(box-sizing, border-box);
+		}
+
+		&:before {
+			width: 30px;
+			height: 30px;
+			top: -3px;
+			left: 0;
+			border: solid 1px color('black');
+			background: white;
+			text-align: center;
+		}
+
+		&:after {
+			width: 20px;
+			height: 20px;
+			top: 2px;
+			left: 5px;
+			background: color('grey');
+			@include prefix(transform, scale(0));
+		}
+	}
+
+	&.error + label:before {
+		border-color: color('error');
+	}
+}
+
+input[type="radio"] + label {
+	&:before,
+	&:after {
+		@include prefix(border-radius, 100%);
+	}
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked,
+input[type="checkbox"].error:checked,
+input[type="radio"].error:checked,
+input[checked],
+input[checked].error {
+	& + label:after {
+		@include prefix(transform, scale(1));
+	}
+}

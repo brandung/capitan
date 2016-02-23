@@ -1,0 +1,63 @@
+@charset "utf-8";
+/**
+ * Capitan buttons.scss v1.0.0
+ *
+ * Copyright brandung GmbH & Co.KG
+ * http://www.brandung.de/
+ *
+ * Date: 2014-03-14
+ * MIT License (MIT)
+ */
+
+@import '../../sass/partials/functions';
+@import '../../sass/partials/variables';
+@import '../../sass/partials/mixins';
+
+
+.btn {
+   position: relative;
+   display: inline-block;
+   margin: 1em 0;
+   padding: ($grid-gutter-width-half + 1) $grid-gutter-width $grid-gutter-width-half;
+   background: color('ci');
+   color: color('white');
+   border: none;
+   white-space: nowrap;
+   text-transform: uppercase;
+   vertical-align: bottom;
+   @include prefix(transition, all .2s ease-out);
+   cursor: pointer;
+   z-index: 0;
+   text-decoration: none;
+   line-height: 19px;
+
+   &:hover {
+      background: color('ci-hover');
+   }
+
+   &:focus {
+      outline: none;
+   }
+
+   &--small {
+      @include fontSizeREM(14);
+      padding: ($grid-gutter-width-half / 2) $grid-gutter-width-half;
+      margin: 1.1em 0;
+   }
+
+   &--disabled {
+      &,
+      &:hover {
+         background: color('grey');
+         cursor: default;
+      }
+   }
+
+   &--block {
+      width: 100%;
+      display: block;
+      padding-left: 10%;
+      padding-right: 10%;
+      overflow: hidden;
+   }
+}

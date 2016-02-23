@@ -1,0 +1,33 @@
+{
+  "name": "brandung-FE",
+  "version": "3.1.8",
+  "description": "Grunt and Bower Setup for brandung frontend workflow",
+  "homepage": "http://www.brandung.de",
+  "author": "brandung GmbH & CO.KG",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brandung/bra_fe_grunt-boilerplate.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.13.0",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-file-creator": "^0.1.3",
+    "grunt-mkdir": "^0.1.2",
+    "grunt-notify": "^0.4.1",
+    "grunt-prompt": "^1.3.3",
+    "grunt-sass": "^1.0.0",
+    "grunt-tasty-swig": "^0.1.0",
+    "grunt-text-replace": "^0.4.0",
+    "grunt-zip": "^0.17.0",
+    "load-grunt-config": "~0.17.2",
+    "time-grunt": "^1.2.1"
+  }
+}
