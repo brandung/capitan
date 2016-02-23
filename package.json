@@ -1,13 +1,13 @@
 {
-  "name": "brandung-FE",
-  "version": "3.1.8",
-  "description": "Grunt and Bower Setup for brandung frontend workflow",
+  "name": "capitan",
+  "version": "0.8.0",
+  "description": "Scaffolding Framework for modern Frontend Development",
   "homepage": "http://www.brandung.de",
   "author": "brandung GmbH & CO.KG",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/brandung/bra_fe_grunt-boilerplate.git"
+    "url": "https://github.com/brandung/capitan.git"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
