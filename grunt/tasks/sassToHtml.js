@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 								return "\t<div class='col-xs-6 col-md-2'>\n" +
 									"\t\t<div class='util-icon--before util-icon--" + key + "' style='text-align:center; font-family: \"icomoon\"; padding: 15px; width: 100%; border: solid 1px black; height: 75px; color: black; line-height:40px; font-size:40px;'>" +
 									"\t\t</div>\n" +
-									"\t\t<b>.util-icon-" + key + ":</b> " + value + "\n" +
+									"\t\t<b>.util-icon--" + key + ":</b> " + value + "\n" +
 									"\t</div>\n";
 							}
 						},
