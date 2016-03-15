@@ -3,10 +3,8 @@
 	"description": "Update and get new components for the capitan frameworks",
 	"author": "brandung GmbH & CO.KG (http://www.brandung.de)",
 	"private": true,
-	"dependencies": {
-		"fe-workflow" : "https://github.com/brandung/capitan.git"
-	},
 	"devDependencies": {
+		"fe-workflow" : "https://github.com/brandung/capitan.git",
 		"bra_module-widget": "https://github.com/brandung/bra_module-widget.git"
   	},
 	"ignore": [
