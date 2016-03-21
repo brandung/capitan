@@ -81,15 +81,27 @@ module.exports = {
 			}
 		]
 	},
-	zipCSSPath: {
+	zipCSSPathMain: {
 		src: [
-			'<%= Config.PKG_NAME %>/**/*.css'
+			'<%= Config.PKG_NAME %>/<%= Config.PUBLIC_DIR %>/css/*.css'
 		],
 		overwrite: true,
 		replacements: [
 			{
 				from: '<%= grunt.config("Config.LIVE_URL") %>',
 				to: '..'
+			}
+		]
+	},
+	zipCSSPathComponents: {
+		src: [
+			'<%= Config.PKG_NAME %>/<%= Config.PUBLIC_DIR %>/component/**/*.css'
+		],
+		overwrite: true,
+		replacements: [
+			{
+				from: '<%= grunt.config("Config.LIVE_URL") %>',
+				to: '<%= Config.PUBLIC_DIR %>'
 			}
 		]
 	},
