@@ -103,7 +103,7 @@ $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
  * Webfont mixin for global use
  *
  * @param {string} $family - set the font-family value
- * @param {string} $fontWeight - set the font-family value
+ * @param {string} $fontWeight - set the font-weight value
  * @param {string} $fontStyle - set the font-style value
  */
 @mixin font($family: $ff-regular, $fontWeight: normal, $fontStyle: normal) {

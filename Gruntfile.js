@@ -123,6 +123,7 @@ module.exports = function (grunt) {
 		'replace:pathPlaceholder',
 		'replace:bowerPathPlaceholder',	
 		'bower:install',
+		'copy:privateFontsToPublicFolder',
 		'copy:privateLibsToPublicFolder',
 		'copy:privateRootFilesToRoot',
 		'clean:gruntUpdateFolder',

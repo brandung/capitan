@@ -3,7 +3,7 @@
         "Resources/Private/Frontend",
         "Resources/Public/component",
         "Resources/Public/css",
-        "Resources/Public/font",
+        "Resources/Public/fonts",
         "Resources/Public/img/",
         "Resources/Public/js/libs/bra",
         "Resources/Public/js/libs/vendor"

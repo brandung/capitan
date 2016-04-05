@@ -5,7 +5,7 @@
  * Copyright brandung GmbH & Co.KG
  * http://www.brandung.de/
  *
- * Date: 2015-06-27
+ * Date: 2016-04-05
  * MIT License (MIT)
  */
 
@@ -13,6 +13,18 @@
 /* ==========================================================================
    Icon Font settings
    ========================================================================== */
+
+@font-face {
+	font-family: 'iconfont';
+	src:url($folder-path + 'fonts/iconfont/iconfont.eot?o54bqx');
+	src:url($folder-path + 'fonts/iconfont/iconfont.eot?o54bqx#iefix') format('embedded-opentype'),
+	url($folder-path + 'fonts/iconfont/iconfont.woff2?o54bqx') format('woff2'),
+	url($folder-path + 'fonts/iconfont/iconfont.ttf?o54bqx') format('truetype'),
+	url($folder-path + 'fonts/iconfont/iconfont.woff?o54bqx') format('woff'),
+	url($folder-path + 'fonts/iconfont/iconfont.svg?o54bqx#iconfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 %util-icon {
 	font-family: 'iconfont', sans-serif;

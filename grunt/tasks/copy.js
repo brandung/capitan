@@ -11,6 +11,12 @@ module.exports = {
 		dest: '<%= Config.PRIVATE_DIR %>/',
 		dot: true
 	},
+	privateFontsToPublicFolder: {
+		expand: true,
+		cwd: '<%= Config.PRIVATE_DIR %>/fonts/',
+		src: '**',
+		dest: '<%= Config.PUBLIC_DIR %>/fonts/'
+	},
 	privateLibsToPublicFolder: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/js/libs/',
