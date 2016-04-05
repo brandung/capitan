@@ -13,7 +13,11 @@
 @import '../../sass/partials/variables';
 @import '../../sass/partials/mixins';
 
-.alert {
+
+$component: 'alert';
+
+// block
+%#{$component} {
 	border: solid 1px color('black');
 	border-top-width: 6px;
 	padding: 5px $grid-gutter-width-half;
@@ -26,20 +30,31 @@
 	:last-child {
 		margin-bottom: 0;
 	}
+}
 
-	&--info {
-		border-color: color('info');
-	}
 
-	&--warning {
-		border-color: color('warning');
-	}
+// element
 
-	&--error {
-		border-color: color('error');
-	}
 
-	&--success {
-		border-color: color('success');
-	}
+// modifier
+.#{$component}--info {
+	border-color: color('info');
+}
+
+.#{$component}--warning {
+	border-color: color('warning');
+}
+
+.#{$component}--error {
+	border-color: color('error');
+}
+
+.#{$component}--success {
+	border-color: color('success');
+}
+
+
+// component class selector
+.#{$component} {
+	@extend %#{$component};
 }

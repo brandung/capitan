@@ -4,15 +4,31 @@
  * Copyright brandung GmbH & Co.KG
  * http://www.brandung.de/
  *
- * Date: 2014-09-23
+ * Date: 2016-04-05
  * MIT License (MIT)
  */
 
 
 /* ==========================================================================
-   Navigation
+   Main Navigation
    ========================================================================== */
 
-nav {
+$component: 'nav-main';
+
+// block
+%#{$component} {
 	@include clearfix();
+}
+
+
+// element
+
+
+// modifier
+
+
+
+// component class selector
+.#{$component} {
+	@extend %#{$component};
 }

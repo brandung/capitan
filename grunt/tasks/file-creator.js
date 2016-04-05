@@ -37,7 +37,7 @@ module.exports = {
 					"// element\n\n\n" +
 					"// modifier\n\n" +
 					"\n\n" +
-					"// module class selector\n" +
+					"// component class selector\n" +
 					".#{$component} {\n" +
 					"\t@extend %#{$component};\n"+
 					"}\n";

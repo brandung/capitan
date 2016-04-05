@@ -1,5 +1,5 @@
 <!-- navigation:start -->
-<nav role="navigation">
+<nav class="nav-main" role="navigation">
 	Navi
 </nav>
 <!-- navigation:end -->

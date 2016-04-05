@@ -1,5 +1,5 @@
 <!-- footer:start -->
-<footer>
+<footer class="footer">
 	Footer
 </footer>
 <!-- footer:end -->

@@ -1,7 +1,7 @@
 <!-- header:start -->
-<header>
+<header class="header">
 	Header
-	{# navigation.tpl #}
-	{% include "../navigation/navigation.tpl" %}
+	{# nav-main.tpl #}
+	{% include "../nav-main/nav-main.tpl" %}
 </header>
 <!-- header:end -->
