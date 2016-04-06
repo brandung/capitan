@@ -103,10 +103,10 @@ basket.require(
 			$.import([
 				// <@delete
 				{
-					condition: $('.mw-headline'),
+					condition: $('[data-role="sg"]'),
 					fetch: [
-						Capitan.Vars.folderPath + 'js/libs/bra/bra_module-widget/bra_module-widget.js',
-						Capitan.Vars.folderPath + 'js/libs/bra/bra_module-widget/bra_module-widget.css'
+						Capitan.Vars.folderPath + 'js/libs/bra/bra_styleguide-widget/bra_styleguide-widget.js',
+						Capitan.Vars.folderPath + 'js/libs/bra/bra_styleguide-widget/bra_styleguide-widget.css'
 					],
 					unique: Capitan.Function.getUnique()
 				},

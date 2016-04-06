@@ -5,7 +5,7 @@
 	"private": true,
 	"devDependencies": {
 		"fe-workflow" : "https://github.com/brandung/capitan.git",
-		"bra_module-widget": "https://github.com/brandung/bra_module-widget.git"
+		"bra_styleguide-widget": "https://github.com/brandung/bra_styleguide-widget.git"
   	},
 	"ignore": [
 		"hbp",
