@@ -77,7 +77,7 @@
 	<div class="col-sm-12" style="overflow:hidden;">.col-sm-12</div>
 </div>
 
-<h2 class="mw-headline">Nested Grids</h2>
+<h3 class="sg__hl sg__hl--subline">Nested Grids</h3>
 <div class="row">
 	<div class="col-sm-3" style="overflow:hidden;">.col-sm-3</div>
 	<div class="col-sm-9" style="overflow:hidden;">
@@ -87,7 +87,7 @@
 			<div class="col-sm-4" style="overflow:hidden;">.col-sm-4</div>
 			<div class="col-sm-4" style="overflow:hidden;">.col-sm-4</div>
 		</div>
-		<h3>Nested with .container</h3>
+		<h3 class="sg__hl sg__hl--subline">Nested with .container</h3>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4" style="overflow:hidden;">.col-sm-4</div>

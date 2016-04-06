@@ -1,5 +1,13 @@
-<!-- buttons:start -->
-<h4 class="mw-headline">Small buttons</h4>
+<!--
+ Capitan buttons v1.0.0
+
+ Copyright brandung GmbH & Co.KG
+ http://www.brandung.de/
+
+ Date: 2016-04-05
+ MIT License (MIT)
+ -->
+<h4 class="sg__hl sg__hl--subline">Small buttons</h4>
 
 <button class="btn btn--small">Button small</button>
 
@@ -7,7 +15,7 @@
 
 <a href="#" class="btn btn--small">Link button small</a>
 
-<h4 class="mw-headline">Normal buttons</h4>
+<h4 class="sg__hl sg__hl--subline">Normal buttons</h4>
 
 <button class="btn">Button</button>
 
@@ -15,7 +23,7 @@
 
 <a href="#" class="btn">Link button</a>
 
-<h4 class="mw-headline">Small buttons disabled</h4>
+<h4 class="sg__hl sg__hl--subline">Small buttons disabled</h4>
 
 <button class="btn btn--small btn--disabled">Button small disabled</button>
 
@@ -23,7 +31,7 @@
 
 <a href="#" class="btn btn--small btn--disabled">Link button small disabled</a>
 
-<h4 class="mw-headline">Normal buttons disabled</h4>
+<h4 class="sg__hl sg__hl--subline">Normal buttons disabled</h4>
 
 <button class="btn btn--disabled">Button disabled</button>
 
@@ -31,7 +39,7 @@
 
 <a href="#" class="btn btn--disabled">Link button disabled</a>
 
-<h4 class="mw-headline">Block buttons</h4>
+<h4 class="sg__hl sg__hl--subline">Block buttons</h4>
 
 <button class="btn btn--small btn--block">Block button small</button>
 
@@ -40,6 +48,3 @@
 <button class="btn btn--disabled btn--block btn--small">Block button small disabled</button>
 
 <button class="btn btn--disabled btn--block">Block button normal disabled</button>
-
-
-<!-- buttons:end -->

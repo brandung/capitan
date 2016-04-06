@@ -8,7 +8,7 @@
  MIT License (MIT)
  -->
 <form method="get" action="#">
-	<h4 class="util-h4">Input types</h4>
+	<h4 class="sg__hl sg__hl--subline">Input types</h4>
 	<p>Allowed/Styled: text, email, number, password, tel, url, date, search</p>
 	<div class="row">
 		<div class="input-box col-xs-12">
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 
-	<h4 class="util-h4">Error states</h4>
+	<h4 class="sg__hl sg__hl--subline">Error states</h4>
 	<div class="row">
 		<div class="input-box col-xs-12">
 			<label for="">Deine Eingabe</label>
@@ -89,7 +89,7 @@
 		</div>
 	</div>
 
-	<h4 class="util-h4">Grid</h4>
+	<h4 class="sg__hl sg__hl--subline">Grid</h4>
 	<div class="row">
 		<div class="input-box col-xs-6">
 			<label for="">Deine Eingabe</label>
