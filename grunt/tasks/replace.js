@@ -172,11 +172,11 @@ module.exports = {
 		replacements: [
 			{
 				from: /<!--\s?<@newComponent@>\s?-->/ig,
-				to: "<h3 class=\"mw-headline\">" +
-				component.charAt(0).toUpperCase() + component.slice(1) +
-				"</h3>\n" +
-				"\t\t\t{% include \"../../component/" + component.toString() + "/" + component.toString() + ".tpl\" %} \n\n" +
-				"\t\t\t<!-- <@newComponent@> -->"
+				to: "\n\t\t\t\t<div data-role=\"sg\" data-type=\"sg__component\" data-name=\"" + component.charAt(0).toUpperCase() + component.slice(1) +  "\">\n" +				
+				"\t\t\t\t\t{# " + component.toString() + ".tpl #}\n" +
+				"\t\t\t\t\t{% include \"../../component/" + component.toString() + "/" + component.toString() + ".tpl\" %} \n" +				
+				"\t\t\t\t</div>\n" +
+				"\t\t\t\t<!-- <@newComponent@> -->"
 			}
 		]
 	}/*,
