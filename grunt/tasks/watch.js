@@ -13,6 +13,7 @@ module.exports = {
 		],
 		tasks: [
 			'sass',
+			'postcss',
 			'sassToHtml'
 		]
 	},

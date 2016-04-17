@@ -97,6 +97,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', 'Desc', [
 		'confReady',
 		'sass',
+		'postcss',
 		'sassToHtml',
 		'tasty_swig',
 		'copy:privateUtilToPublicFolder',
