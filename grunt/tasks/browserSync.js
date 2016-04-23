@@ -21,7 +21,6 @@ module.exports = {
 		notify: false,
 		injectChanges: false,
 		reloadDelay: 1000,
-		port: 443,
 		server: {
 			baseDir: '<%= Config.CWD %>',
 			index: '<%= Config.PRIVATE_DIR %>/templates/_modules.html',
