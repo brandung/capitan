@@ -12,6 +12,6 @@
     "public": "Resources/Public",
     "liveURL": "/typo3conf/ext/%%repo%%",
     "route": {
-        "/typo3conf/ext/%%repo%%/Resources/": "Resources/"
+        "/typo3conf/ext/%%repo%%/Resources": "Resources/"
     }
 }
