@@ -32,7 +32,7 @@ module.exports = {
 					"\n" +
 					"// block\n" +
 					"%#{$component} {\n" +
-					"\t\n"+
+					"\t@include clearfix();\n"+
 					"}\n\n\n"+
 					"// element\n\n\n" +
 					"// modifier\n\n" +
