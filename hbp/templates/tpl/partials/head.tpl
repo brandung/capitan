@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>%%project%%</title>
+		<title>{% if pagetitle %}{{ pagetitle }}{% else %}%%project%%{% endif %}</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -17,4 +17,5 @@
 			html.className = html.className.replace('no-js', '');
 		</script>
 		<link rel="stylesheet" href="%%public%%/css/main.css">
+		<script async src="%%public%%/js/main.js"></script>
 	</head>
