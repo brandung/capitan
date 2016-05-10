@@ -107,7 +107,7 @@ module.exports = {
 	},
 	importJsStorageKey: {
 		src: [
-			'<%= Config.PUBLIC_DIR %>/js/function/get-unique.js'
+			'<%= Config.PUBLIC_DIR %>/js/main.js'
 		],
 		overwrite: true,
 		replacements: [
