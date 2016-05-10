@@ -70,7 +70,7 @@ basket.require(
 			$doc: $(document)
 		});
 
-		//Assets that are necessary globally and on every page, can and will be loaded here
+		// Assets that are necessary globally and on every page, can and will be loaded here (DOM not ready)
 		Capitan.Util.fetchBeforeRender = function () {
 			return $.import([
 				{
@@ -97,7 +97,7 @@ basket.require(
 			], false);
 		};
 
-		// Component loader
+		// Component loader (DOM is ready)
 		Capitan.Util.loadComponents = function () {
 			$.import([
 				{
@@ -155,12 +155,16 @@ basket.require(
 		// --- start|bra-pb: js ---
 		// --- end|bra-pb: js ---
 
+		// load before-render bundle before DOM ready
+		Capitan.Util.fetchBeforeRender();
+
 		/**
 		 * document ready call
 		 */
 		$(function () {
-			Capitan.Util.fetchBeforeRender();
+			// ...
 		});
+		
 	})(jQuery);
 }, function () {
 	// <@delete
