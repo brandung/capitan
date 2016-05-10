@@ -25,7 +25,7 @@ Helpers.setTimestamp = function () {
 	var date = new Date(),
 		timestamp;
 
-	timestamp = '' + Math.ceil(date.getTime() / 1000);
+	timestamp = '' + Math.ceil(date.getTime());
 	timestamp = timestamp.split('');
 	timestamp.pop();
 	timestamp.pop();
