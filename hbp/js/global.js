@@ -86,14 +86,13 @@ basket.require(
 						Capitan.Vars.folderPath + 'js/function/get-computed-style.js',
 						Capitan.Vars.folderPath + 'js/util/set-breakpoints.js',
 						Capitan.Vars.folderPath + 'js/handle/set-event-class.js',
-						Capitan.Vars.folderPath + 'js/handle/resize-handler.js',
-						Capitan.Vars.folderPath + 'js/function/get-unique.js'
+						Capitan.Vars.folderPath + 'js/handle/resize-handler.js'
 						// bundle@>
 					],
 					callback: [
 						{ method: Capitan.Util.loadComponents }
 					],
-					unique: 123718
+					unique: '<@unique@>'
 				}
 			], false);
 		};
@@ -101,16 +100,14 @@ basket.require(
 		// Component loader
 		Capitan.Util.loadComponents = function () {
 			$.import([
-				// <@delete
 				{
 					condition: $('[data-role="sg"]'),
 					fetch: [
 						Capitan.Vars.folderPath + 'js/libs/bra/bra_styleguide-widget/bra_styleguide-widget.js',
 						Capitan.Vars.folderPath + 'js/libs/bra/bra_styleguide-widget/bra_styleguide-widget.css'
 					],
-					unique: Capitan.Function.getUnique()
+					unique: '<@unique@>'
 				},
-				// delete@>
 				{
 					condition: Capitan.Function.assertBreakpoint('lt', 'md'),
 					fetch: [
@@ -119,7 +116,7 @@ basket.require(
 						Capitan.Vars.folderPath + 'js/util/h5bp-helper.js'
 						// bundle@>
 					],
-					unique: Capitan.Function.getUnique()
+					unique: '<@unique@>'
 				},
 				{
 					// load always and always from server
@@ -135,21 +132,21 @@ basket.require(
 					fetch: [
 						Capitan.Vars.folderPath + 'component/alert/alert.css'
 					],
-					unique: Capitan.Function.getUnique()
+					unique: '<@unique@>'
 				},
 				{
 					condition: $('form'),
 					fetch: [
 						Capitan.Vars.folderPath + 'component/forms/forms.css'
 					],
-					unique: Capitan.Function.getUnique()
+					unique: '<@unique@>'
 				},
 				{
 					condition: $('.btn'),
 					fetch: [
 						Capitan.Vars.folderPath + 'component/buttons/buttons.css'
 					],
-					unique: Capitan.Function.getUnique()
+					unique: '<@unique@>'
 				}// <@newComponent@>
 			], true);
 		};
