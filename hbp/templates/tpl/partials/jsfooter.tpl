@@ -1,2 +1,2 @@
-	<!-- JS -->
-	<script src="%%public%%/js/main.js"></script>
+{# Third Party JS (tracking, captcha, etc. ) #}
+	
