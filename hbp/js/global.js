@@ -41,6 +41,11 @@ var Capitan = function (out) {
 	Util: {}
 });
 
+// <@delete
+// clear basket in develop mode
+basket.clear();
+// delete@>
+
 // abortion timeout for asset fetching, default 5000ms
 basket.timeout = 60000;
 
