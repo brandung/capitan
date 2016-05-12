@@ -324,7 +324,7 @@ $sizes: (
 		'xs', 'sm', 'md', 'lg', 'xl'
 );
 @each $size in $sizes {
-	@include respondMin(point('min-' + #{$size})) {
+	@include respondMin(point('min-#{$size}')) {
 		.util-visible-#{$size} {
 			display: block !important;
 		}
