@@ -95,7 +95,14 @@ basket.require(
 						// bundle@>
 					],
 					callback: [
-						{ method: Capitan.Util.loadComponents }
+						{
+							method: function () {
+								// load components when DOM is ready
+								$(function(){
+									Capitan.Util.loadComponents();
+								})
+							}
+						}
 					],
 					unique: '<@unique@>'
 				}
