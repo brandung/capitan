@@ -159,7 +159,7 @@ module.exports = {
 				"\n\t\t\t\t\tfetch: [" +
 				"\n\t\t\t\t\t\tCapitan.Vars.folderPath + 'component/" + component + "/" + component + ".css'" +
 				"\n\t\t\t\t\t]," +
-				"\n\t\t\t\t\tunique: Capitan.Function.getUnique()" +
+				"\n\t\t\t\t\tunique: '<@unique@>'" +
 				"\n\t\t\t\t}// <@newComponent@>"
 			}
 		]
