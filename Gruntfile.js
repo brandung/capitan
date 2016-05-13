@@ -159,6 +159,7 @@ module.exports = function (grunt) {
 		'clean:bundleFolder',
 		'uglify:component',
 		'uglify:global',
+		'uglify:bra',
 		'assetBundle',
 		'uglify:mainJS',
 		'cssmin',
