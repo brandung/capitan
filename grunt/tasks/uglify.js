@@ -34,6 +34,12 @@ module.exports = {
 		src: ['**/*.js', '!bundle/*.js', '!**/main.js', '!libs/**/*.js'],
 		dest: '<%= Config.PUBLIC_DIR %>/js/'
 	},
+	bra: {
+		expand: true,
+		cwd: '<%= Config.PUBLIC_DIR %>/js/libs/bra',
+		src: ['**/*.js'],
+		dest: '<%= Config.PUBLIC_DIR %>/js/libs/bra'
+	},
 	mainJS: {
 		expand: true,
 		cwd: '<%= Config.PUBLIC_DIR %>/js/',
