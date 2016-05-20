@@ -62,6 +62,10 @@ basket.require(
 		unique: 0
 	},
 	{
+		url: Capitan.Vars.folderPath + 'js/libs/vendor/picturefill/picturefill.min.js',
+		unique: 0
+	},
+	{
 		url: Capitan.Vars.folderPath + 'js/libs/vendor/import/jquery.import.min.js',
 		unique: 0
 	}
