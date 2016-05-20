@@ -1,6 +1,6 @@
 @charset "utf-8";
 /**
- * Capitan mixins.scss v2.0.0
+ * Capitan mixins.scss v2.0.1
  *
  * Copyright brandung GmbH & Co.KG
  * http://www.brandung.de/
@@ -36,14 +36,11 @@
 /**
  * Calculate PX font size to REM
  *
- * - add PX fallback for older browser
- *
  * @param {number} $size - element size in pixel
  * @param {number} $base - body font size in pixel
  *
  */
 @mixin fontSizeREM($size: $body-font-size-px, $base: $base-em) {
-	font-size: $size + px;
 	font-size: ($size / $base) + rem;
 }
 
@@ -56,7 +53,6 @@
  *
  */
 @mixin propToREM($prop: 'font-size', $size: $body-font-size-px) {
-	#{$prop}: $size + px;
 	#{$prop}: ($size / $base-em) + rem;
 }
 
