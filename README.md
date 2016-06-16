@@ -1,2 +1,7 @@
 # capitan
-Capitan is a Grunt-based Frontend-Workflow, providing a powerful Component System for structuring your Webprojects.
+Capitan is a Grunt-based, system independent Frontend-Workflow that is built on a flexible component system.
+
+**The main features are:**
+* System independent
+* Components are self-contained
+* Separation between private and public assets
