@@ -22,8 +22,8 @@ module.exports = {
 		injectChanges: false,
 		reloadDelay: 1000,
 		server: {
-			baseDir: '<%= Config.CWD %>',
-			index: '<%= Config.PRIVATE_DIR %>/templates/_modules.html',
+			baseDir: '<%= Config.CWD %>/<%= Config.PRIVATE_DIR %>/templates/',
+			index: '_modules.html',
 			routes: '<%= Config.syncRoutes %>'
 		},
 		ghostMode: {
