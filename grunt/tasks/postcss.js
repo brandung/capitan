@@ -7,8 +7,14 @@
 module.exports = {
 	options: {
 		processors: [
-			require('pixrem')(), // add fallbacks for rem units
-			require('autoprefixer')({browsers: 'last 2 versions'}) // add vendor prefixes
+			// add fallbacks for rem units
+			require('pixrem')(),
+			// add vendor prefixes
+			// specifies the last two versions of any mainstream browser,
+			// or any exceeding 2% market share
+			require('autoprefixer')({
+				browsers: ['last 3 versions', '> 2%']
+			})
 		]
 	},
 	default: {
