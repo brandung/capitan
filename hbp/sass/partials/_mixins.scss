@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /**
  * Capitan mixins.scss v2.0.1
  *
@@ -74,7 +75,7 @@
 $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 @mixin prefix($attribute, $value) {
 	@each $prefix in $prefixes {
-		#{$prefix}#{$attribute}:unquote(#{$value});
+		#{$prefix}#{$attribute}: unquote(#{$value});
 	}
 }
 
@@ -117,15 +118,17 @@ $prefixes: ("-webkit-","-moz-", "-o-", "-ms-", "");
 *
 * @param {string} $colorFX - properties for color transition
 * @param {string} $hoverColor - hover color
-* @param {string} $backgroundFX - properties for backgrounf transition
+* @param {string} $backgroundFX - properties for background transition
 * @param {string} $hoverBackground - hover background color
 */
 @mixin hoverTransition($colorFX: color 0.2s linear, $hoverColor: false, $backgroundFX: background 0.2s linear, $hoverBackground: false) {
 	@include prefix(transition, ($colorFX, $backgroundFX));
+
 	&:hover {
 		@if $hoverColor {
 			color: $hoverColor;
 		}
+		
 		@if $hoverBackground {
 			background: $hoverBackground;
 		}

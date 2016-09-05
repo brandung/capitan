@@ -97,7 +97,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', 'Desc', [
 		'confReady',
 		'sass',
-		'postcss',
+		'postcss:CSS',
 		'sassToHtml',
 		'tasty_swig',
 		'copy:privateUtilToPublicFolder',
@@ -145,6 +145,14 @@ module.exports = function (grunt) {
 		'default',
 		'browserSync',
 		'watch'
+	]);
+
+
+	/**
+	 * The 'project:lint' task for validating private files
+	 */
+	grunt.registerTask('project:lint', [
+		'postcss:SASS'
 	]);
 
 

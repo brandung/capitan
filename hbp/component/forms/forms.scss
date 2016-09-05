@@ -1,11 +1,12 @@
 @charset "utf-8";
+
 /**
  * Capitan forms.scss v1.0.0
  *
  * Copyright brandung GmbH & Co.KG
  * http://www.brandung.de/
  *
- * Date: 2014-03-14
+ * Date: 2016-09-05
  * MIT License (MIT)
  */
 
@@ -139,7 +140,7 @@ input[type="checkbox"] {
 	position: absolute;
 	left: -9999px;
 
-	& + label {
+	+ label {
 		position: relative;
 		padding-left: 50px;
 		display: inline-block;
@@ -200,7 +201,7 @@ input[type="checkbox"].error:checked,
 input[type="radio"].error:checked,
 input[checked],
 input[checked].error {
-	& + label:after {
+	+ label:after {
 		@include prefix(transform, scale(1));
 	}
 }

@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /**
  * Capitan variables.scss v3.0.0
  *
@@ -41,7 +42,9 @@ $smartphone: 480;
 $tablet: 768;
 $desktop: 992;
 $retina: 1200;
+
 /* breakpoints@> */
+
 
 // Quickly modify global grid styling
 $enable-flex: false !default;
@@ -60,33 +63,33 @@ $grid-gutter-width-half: $grid-gutter-width / 2;
 
 // map for getBreakpointList() function
 $js-breakpoints: (
-		'xs': $featurephone,
-		'sm': $smartphone,
-		'md': $tablet,
-		'lg': $desktop,
-		'xl': $retina
+'xs': $featurephone,
+'sm': $smartphone,
+'md': $tablet,
+'lg': $desktop,
+'xl': $retina
 );
 
 // map for bootstrap mixins
 $grid-breakpoints: (
-		'xs': $featurephone + px,
-		'sm': $smartphone + px,
-		'md': $tablet + px,
-		'lg': $desktop + px,
-		'xl': $retina + px
+'xs': $featurephone + px,
+'sm': $smartphone + px,
+'md': $tablet + px,
+'lg': $desktop + px,
+'xl': $retina + px
 ) !default;
 
 // map for respondMin/respondMax mixin
 $breakpoints: (
-		'min-xs': pxToEm($featurephone),
-		'min-sm': pxToEm($smartphone),
-		'min-md': pxToEm($tablet),
-		'min-lg': pxToEm($desktop),
-		'min-xl': pxToEm($retina),
-		'max-xs': pxToEm($smartphone - 1),
-		'max-sm': pxToEm($tablet - 1),
-		'max-md': pxToEm($desktop - 1),
-		'max-lg': pxToEm($retina - 1)
+'min-xs': pxToEm($featurephone),
+'min-sm': pxToEm($smartphone),
+'min-md': pxToEm($tablet),
+'min-lg': pxToEm($desktop),
+'min-xl': pxToEm($retina),
+'max-xs': pxToEm($smartphone - 1),
+'max-sm': pxToEm($tablet - 1),
+'max-md': pxToEm($desktop - 1),
+'max-lg': pxToEm($retina - 1)
 );
 
 
@@ -96,20 +99,21 @@ $breakpoints: (
 
 /* <@colors */
 $colors: (
-		'black': #000,
-		'white': #fff,
-		'grey': #666,
-		'grey-dark': #333,
-		'grey-light': #ccc,
-		'grey-lightest': #fafafa,
-		'placeholder': #999,
-		'ci': #c00,
-		'ci-hover': #a00,
-		'error': #9e1726,
-		'success': #10B044,
-		'warning': #f0ad4e,
-		'info': #2989D8
+'black': #000,
+'white': #fff,
+'grey': #666,
+'grey-dark': #333,
+'grey-light': #ccc,
+'grey-lightest': #fafafa,
+'placeholder': #999,
+'ci': #c00,
+'ci-hover': #a00,
+'error': #9e1726,
+'success': #10B044,
+'warning': #f0ad4e,
+'info': #2989D8
 );
+
 /* colors@> */
 
 
@@ -119,6 +123,7 @@ $colors: (
 
 /* <@icons */
 $icons: (
-	close: '\e900'
+close: '\e900'
 );
+
 /* icons@> */
