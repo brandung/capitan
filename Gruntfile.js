@@ -73,7 +73,8 @@ module.exports = function (grunt) {
 			jitGrunt: {
 				staticMappings: {
 					bower: 'grunt-bower-task',
-					replace: 'grunt-text-replace'
+					replace: 'grunt-text-replace',
+					htmlhintplus: 'grunt-htmlhint-plus'
 				}
 			},
 			init: false
@@ -153,6 +154,7 @@ module.exports = function (grunt) {
 	 */
 	grunt.registerTask('project:lint', [
 		'postcss:SASS'
+		'htmlhintplus'
 	]);
 
 
