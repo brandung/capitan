@@ -13,9 +13,11 @@
  *
  * @param {string} operator - lt (lower than), eq (equal), ht (higher than)
  * @param {string} breakpoint - xs, sm, md, lg, xl
- * @return {boolean}
+ * @return {boolean} breakpoint condition
  */
 Capitan.Function.assertBreakpoint = function (operator, breakpoint) {
+	'use strict';
+
 	var breakpoints = Object.keys(Capitan.Vars.breakpoints),
 		curBreakpointIndex = breakpoints.indexOf(Capitan.Vars.currentBreakpoint),
 		conditionalBreakpointIndex = breakpoints.indexOf(breakpoint);
@@ -23,15 +25,11 @@ Capitan.Function.assertBreakpoint = function (operator, breakpoint) {
 	switch (operator) {
 		case 'eq':
 			return curBreakpointIndex === conditionalBreakpointIndex;
-			break;
 		case 'lt':
 			return curBreakpointIndex < conditionalBreakpointIndex;
-			break;
 		case 'ht':
 			return curBreakpointIndex > conditionalBreakpointIndex;
-			break;
 		default:
 			return false;
-			break;
 	}
 };

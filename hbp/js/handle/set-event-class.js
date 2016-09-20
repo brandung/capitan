@@ -11,6 +11,8 @@
  * e.g. when the breakpoint has changed (see handle/resize-handler.js for more information)
  */
 Capitan.Handle.setEventClass = function () {
+	'use strict';
+
 	var _ = {};
 
 	_.handler = function (event, className) {

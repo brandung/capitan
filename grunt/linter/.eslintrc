@@ -1,0 +1,83 @@
+{
+  "globals": {
+    "Capitan": true
+  },
+  "env": {
+    "jquery": true
+  },
+  "rules": {
+    // Possible Errors
+    "no-cond-assign": ["error", "always"],
+    "no-dupe-args": 1,
+    "no-dupe-keys": 1,
+    "no-empty": 1,
+    "no-extra-semi": 2,
+    "no-func-assign": 2,
+    "no-inner-declarations": 1,
+    "no-obj-calls": 2,
+    "no-sparse-arrays": 2,
+    "no-unexpected-multiline": 2,
+    "no-unreachable": 2,
+    "use-isnan": 1,
+    "valid-jsdoc": 1,
+    "valid-typeof": 2,
+
+    // Best Practices
+    "dot-notation": 1,
+    "curly": 1,
+    "eqeqeq": 2,
+    "guard-for-in": 1,
+    "no-alert": 1,
+    "no-empty-function": 1,
+    "no-eq-null": 1,
+    "no-eval": 2,
+    "no-fallthrough": 2,
+    "no-implicit-coercion": 2,
+    "no-multi-spaces": 1,
+    "no-multi-str": 1,
+    "no-new": 2,
+    "no-octal": 2,
+    "no-redeclare": 2,
+    "no-script-url": 2,
+    "no-self-assign": 1,
+    "no-useless-concat": 2,
+    "no-useless-escape": 2,
+    "no-void": 2,
+    "vars-on-top": "off",
+    "wrap-iife": "off",
+
+    "strict": ["error", "safe"],
+
+    // Variables
+    "init-declarations": ["error", "always"],
+
+    // Stylistic Issues
+    "array-bracket-spacing": ["error", "always", { "objectsInArrays": false, "singleValue": false }],
+    "block-spacing": 2,
+    "brace-style": 2,
+    "comma-dangle": ["error", "never"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "camelcase": 2,
+    "computed-property-spacing": ["error", "never"],
+    "consistent-this": ["error", "_this"],
+    "func-call-spacing": ["error", "never"],
+    "func-style": "off", //["error", "expression"],
+    "indent": ["warn", "tab", { "SwitchCase": 1 }],
+    "no-mixed-spaces-and-tabs": "error",
+    "key-spacing": ["error", { "beforeColon": false, "mode": "strict" }],
+    "keyword-spacing": ["error", { "before": true }],
+    "lines-around-comment": ["error", { "beforeBlockComment": true }],
+    "newline-after-var": ["error", "always"],
+    "object-curly-newline": ["error", { "multiline": true }],
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "require-jsdoc": ["error", {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": true,
+        "ClassDeclaration": true
+      }
+    }],
+    "linebreak-style": "off" //["error", "unix"],
+
+  }
+}

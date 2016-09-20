@@ -10,6 +10,8 @@
  * Mobile Boilerplate helper function invocations
  */
 Capitan.Util.h5bpHelper = function () {
+	'use strict';
+
 	MBP.scaleFix();
 	MBP.hideUrlBar();
 }();

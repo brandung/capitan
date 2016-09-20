@@ -10,9 +10,11 @@
  * @param {string} element - Element selector, e.g. 'body', '.foobar > p'
  * @param {string} pseudo - Pseudoelement, e.g. ':before', ':after'
  * @param {string} property - CSS property, e.g. 'content', 'font-size'
- * @returns {*}
+ * @returns {*} string - returns the property value
  */
 Capitan.Function.getComputedStyle = function (element, pseudo, property) {
+	'use strict';
+
 	pseudo = pseudo || null;
 
 	return window.getComputedStyle(document.querySelector(element), pseudo)
