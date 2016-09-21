@@ -134,6 +134,7 @@ module.exports = function (grunt) {
 		'copy:hotfixjsToPublicFolder',
 		'copy:hotfixcssToPublicFolder',
 		'clean:rootFilesInPrivateFolder',
+		'concat:mainVendorJS',
 		'default',
 		'project:serve'
 	]);

@@ -46,16 +46,31 @@ Config.LIVE_URL = Config.systemPaths.liveURL + '/' + Config.PUBLIC_DIR;
 Config.SRC_DIR = Config.systemPaths.private + '/' + Config.srcFolderName;
 Config.BUILD_DIR = Config.systemPaths.private + '/' + Config.buildFolderName;
 Config.ZIP_PUBLIC_FOLDER = Config.PKG_NAME + '/' + Config.PUBLIC_DIR;
+Config.PUBLIC_JS_VENDOR = Config.PUBLIC_DIR + '/js/libs/vendor';
 
 /**
  * This is a collection of file patterns that refer to our app code (the
  * stuff in `src/`). These file paths are used in the configuration of
  * build tasks.
+ *
+ * @type {{js: *[], scss: *[]}}
  */
 Config.app_files = {
 	js: [Config.SRC_DIR + '/**/*.js'],
 	scss: [Config.SRC_DIR +'/**/*.scss']
 };
 
+/**
+ * Define our default required JS files.
+ * The concatenated file will be load via basket in our global.js. *
+ *
+ * @type {*[]}
+ */
+Config.requiredVendorJSArr = [
+	Config.PUBLIC_JS_VENDOR + '/jquery/jquery.min.js',
+	Config.PUBLIC_JS_VENDOR + '/modernizr/modernizr.custom.min.js',
+	Config.PUBLIC_JS_VENDOR + '/picturefill/picturefill.min.js',
+	Config.PUBLIC_JS_VENDOR + '/import/jquery.import.min.js'
+];
 
 module.exports = Config;

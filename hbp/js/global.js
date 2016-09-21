@@ -56,19 +56,7 @@ basket.timeout = 60000;
  */
 basket.require(
 	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/jquery/jquery.min.js',
-		unique: 0
-	},
-	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/modernizr/modernizr.custom.min.js',
-		unique: 0
-	},
-	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/picturefill/picturefill.min.js',
-		unique: 0
-	},
-	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/import/jquery.import.min.js',
+		url: Capitan.Vars.folderPath + 'js/cap.required-vendor.min.js',
 		unique: 0
 	}
 ).then(function () {
