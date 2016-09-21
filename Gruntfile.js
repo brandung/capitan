@@ -153,8 +153,9 @@ module.exports = function (grunt) {
 	 * The 'project:lint' task for validating private files
 	 */
 	grunt.registerTask('project:lint', [
-		'postcss:SASS'
-		'htmlhintplus'
+		'postcss:SASS',
+		'htmlhintplus',
+		'eslint'
 	]);
 
 
