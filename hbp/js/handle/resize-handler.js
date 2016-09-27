@@ -12,10 +12,13 @@
  * Triggers an event (on document), when the breakpoint has changed
  */
 Capitan.Handle.resizeHandler = function () {
+	'use strict';
+
 	var _ = {};
 
 	_.handler = function () {
-		var breakpoint, orientation;
+		var breakpoint = '',
+			orientation = '';
 
 		Capitan.Vars.currentBreakpoint = Capitan.Function.getBreakpoint();
 		Capitan.Vars.currentOrientation = Capitan.Function.getOrientation();

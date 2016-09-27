@@ -1,11 +1,12 @@
 @charset "utf-8";
+
 /**
- * Capitan buttons.scss v1.0.0
+ * Capitan buttons.scss v2.0.0
  *
  * Copyright brandung GmbH & Co.KG
  * http://www.brandung.de/
  *
- * Date: 2014-03-14
+ * Date: 2016-09-01
  * MIT License (MIT)
  */
 
@@ -13,51 +14,297 @@
 @import '../../sass/partials/variables';
 @import '../../sass/partials/mixins';
 
+/* ==========================================================================
+   button mixin
+   ========================================================================== */
+/*
+* create button [create-btn]
+*
+* desc: button-mixin to create consistent buttons
+*
+* @param  $btn-height           [px value: 40px]
+* @param  $btn-block            [boolean: true/false]
+* @param  $btn-font-size          [number: 16, 22, 26, etc.]        //just the number, no "px", "em", "rem", etc.
+* @param  $btn-font-weight        [number: 100, 200, 300, etc.]
+* @param  $btn-letter-spacing       [px value: 5px]
+* @param  $btn-text-transform       [string: uppercase, etc.]
+*
+* @param  $btn-bg-color         [any color]
+* @param  $btn-bg-color-hover       [any color]
+* @param  $btn-bg-color-active      [any color]
+*
+* @param  $btn-border-color       [any color]
+* @param  $btn-border-color-hover     [any color]
+* @param  $btn-border-color-active    [any color]
+*
+* @param  $btn-font-color         [any color]
+* @param  $btn-font-color-hover     [any color]
+* @param  $btn-font-color-active      [any color]
+*
+*
+* usage:
+*   define all the button properties in the $button-properties map
+*   call the button-mixin to create the initial css like this:
+*
+*   .button-classname {
+*     @include create-btn(
+*       $btn-bg-color-hover: #f00,
+*     );
+*   }
+*
+*
+*/
 
-.btn {
-   position: relative;
-   display: inline-block;
-   margin: 1em 0;
-   padding: ($grid-gutter-width-half + 1) $grid-gutter-width $grid-gutter-width-half;
-   background: color('ci');
-   color: color('white');
-   border: none;
-   white-space: nowrap;
-   text-transform: uppercase;
-   vertical-align: bottom;
-   @include prefix(transition, all .2s ease-out);
-   cursor: pointer;
-   z-index: 0;
-   text-decoration: none;
-   line-height: 19px;
 
-   &:hover {
-      background: color('ci-hover');
-   }
+/* vars, maps & placeholder
+========================================================================== */
+//component name
+$component: 'btn';
 
-   &:focus {
-      outline: none;
-   }
+//button properties
+$btn-properties: (
+font-family: $ff-regular,
+font-color: color('white'),
+font-size: 14,
+border-radius: 0,
+border-style: solid,
+border-width: 1px,
+box-shadow: none,
+text-decoration: none,
+text-transform: uppercase,
+padding: 5px 30px 0,
+button-height: 37px,
+opacity: .5,
+bg-color: color('ci'),
+bg-color-hover: color('ci-hover'),
+animation-duration: .2s
+);
 
-   &--small {
-      @include fontSizeREM(14);
-      padding: ($grid-gutter-width-half / 2) $grid-gutter-width-half;
-      margin: 1.1em 0;
-   }
+//global placeholder to be extended in all buttons
+%btn-basics {
+	//includes
+	@include prefix(box-shadow, map-get($btn-properties, box-shadow));
+	@include fontSizeREM(map-get($btn-properties, font-size));
 
-   &--disabled {
-      &,
-      &:hover {
-         background: color('grey');
-         cursor: default;
-      }
-   }
+	//basic styles
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	border-radius: map-get($btn-properties, border-radius);
+	font-family: map-get($btn-properties, font-family);
+	padding: map-get($btn-properties, padding);
+	text-decoration: map-get($btn-properties, text-decoration);
+	text-align: center;
+	-webkit-tap-highlight-color: transparent;
 
-   &--block {
-      width: 100%;
-      display: block;
-      padding-left: 10%;
-      padding-right: 10%;
-      overflow: hidden;
-   }
+	//animation
+	@include prefix(transition, (
+		background-color map-get($btn-properties, animation-duration) linear,
+		border-color map-get($btn-properties, animation-duration) linear,
+		color map-get($btn-properties, animation-duration) linear
+	));
+
+	//state style
+	&:focus {
+		outline: none;
+	}
+
+	&[disabled],
+	&.is-disabled {
+		cursor: not-allowed;
+		opacity: map-get($btn-properties, opacity);
+	}
+
+	//print
+	@media print {
+		display: none !important;
+	}
+}
+
+
+/* mixin: create-btn
+========================================================================== */
+@mixin create-btn(
+	/* mixin parameters */
+	//misc
+	$btn-height: map-get($btn-properties, button-height),
+	$btn-block: false,
+	$btn-font-size: map-get($btn-properties, font-size),
+	$btn-font-weight: 100,
+	$btn-letter-spacing: normal,
+	$btn-text-transform: map-get($btn-properties, text-transform),
+	//background color
+	$btn-bg-color: map-get($btn-properties, bg-color),
+	$btn-bg-color-hover: map-get($btn-properties, bg-color-hover),
+	$btn-bg-color-active: map-get($btn-properties, bg-color-hover),
+	//border color
+	$btn-border-color: $btn-bg-color,
+	$btn-border-color-hover: $btn-bg-color-hover,
+	$btn-border-color-active: $btn-bg-color-active,
+	//font color
+	$btn-font-color: map-get($btn-properties, font-color),
+	$btn-font-color-hover: $btn-font-color,
+	$btn-font-color-active: $btn-font-color
+) {
+	//basic styles
+	@extend %btn-basics;
+
+	//custom styles
+	@include fontSizeREM($btn-font-size);
+	border: map-get($btn-properties, border-style) map-get($btn-properties, border-width) $btn-border-color;
+	background: $btn-bg-color;
+	color: $btn-font-color;
+	line-height: ($btn-height - (map-get($btn-properties, border-width)*2)) / $btn-font-size / 1px;
+	font-weight: $btn-font-weight;
+	letter-spacing: $btn-letter-spacing;
+	text-transform: $btn-text-transform;
+	white-space: nowrap;
+	margin: 0 0 1rem;
+	//min-width: 10em;
+
+	//block styles
+	@if $btn-block == true {
+		display: block;
+		text-align: center;
+		width: 100%;
+	}
+
+	//state style
+	&:hover {
+		background: $btn-bg-color-hover;
+		border-color: $btn-border-color-hover;
+		color: $btn-font-color-hover;
+	}
+
+	&:active {
+		background: $btn-bg-color-active;
+		border-color: $btn-border-color-active;
+		color: $btn-font-color-active;
+	}
+
+	&[disabled],
+	&.is-disabled {
+		&:hover,
+		&:active {
+			background: $btn-bg-color;
+			border-color: $btn-border-color;
+			color: $btn-font-color;
+		}
+	}
+}
+
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+// btn
+%#{$component} {
+	@include create-btn();
+}
+
+// btn--primary
+.#{$component}--primary {
+	// DEFAULT
+}
+
+// btn--secondary
+.#{$component}--secondary {
+	@include create-btn(
+		$btn-bg-color: color('ci-hover'),
+		$btn-bg-color-hover: color('ci'),
+		$btn-bg-color-active: color('ci'),
+		$btn-border-color: color('ci-hover'),
+		$btn-border-color-hover: color('ci-hover'),
+		$btn-border-color-active: color('ci-hover')
+	);
+}
+
+// btn--ghost
+.#{$component}--ghost {
+	@include create-btn(
+		$btn-bg-color: none,
+		$btn-bg-color-hover: none,
+		$btn-bg-color-active: none,
+		$btn-font-color: color('ci'),
+		$btn-border-color: color('white'),
+		$btn-border-color-hover: color('web-black'),
+		$btn-border-color-active: color('web-black')
+	);
+}
+
+// btn--block
+.#{$component}--block {
+	width: 100%;
+}
+
+
+//component class
+.#{$component} {
+	@extend %#{$component};
+}
+
+
+/* ==========================================================================
+   Button-group (btn-group)
+   ========================================================================== */
+
+%#{$component}-group {
+	@include clearfix();
+	margin: 1rem 0;
+	padding: 0;
+	list-style: none;
+
+	a,
+	button,
+	li {
+		margin: 0 0 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	li {
+		display: block;
+		text-align: center;
+
+		@include respondMin(point('min-lg')) {
+			text-align: inherit;
+		}
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// btn-group
+.#{$component}-group {
+	@extend %#{$component}-group;
+}
+
+// btn-group--centered
+.#{$component}-group--centered {
+	@extend %#{$component}-group;
+	text-align: center;
+}
+
+// btn-group--right
+.#{$component}-group--right {
+	@extend %#{$component}-group;
+	text-align: right;
+}
+
+// btn-group--inline
+.#{$component}-group--inline {
+	@extend %#{$component}-group;
+
+	li {
+		display: inline-block;
+		word-spacing: normal;
+	}
 }

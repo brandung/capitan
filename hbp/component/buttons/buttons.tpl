@@ -1,50 +1,51 @@
 <!--
- Capitan buttons v1.0.0
+ Capitan buttons v2.0.0
 
  Copyright brandung GmbH & Co.KG
  http://www.brandung.de/
 
- Date: 2016-04-05
+ Date: 2016-09-01
  MIT License (MIT)
  -->
-<h4 class="sg__hl sg__hl--subline">Small buttons</h4>
-
-<button class="btn btn--small">Button small</button>
-
-<input type="button" class="btn btn--small" value="Input button small" />
-
-<a href="#" class="btn btn--small">Link button small</a>
-
-<h4 class="sg__hl sg__hl--subline">Normal buttons</h4>
+<h4 class="sg__hl sg__hl--subline">Button defaults</h4>
 
 <button class="btn">Button</button>
-
 <input type="button" class="btn" value="Input button" />
-
 <a href="#" class="btn">Link button</a>
+<button class="btn" disabled>Button disabled</button>
 
-<h4 class="sg__hl sg__hl--subline">Small buttons disabled</h4>
 
-<button class="btn btn--small btn--disabled">Button small disabled</button>
+<h4 class="sg__hl sg__hl--subline">Button Variants</h4>
 
-<input type="button" class="btn btn--small btn--disabled" value="Input button small disabled" />
+<button class="btn btn--block">.btn--block</button>
 
-<a href="#" class="btn btn--small btn--disabled">Link button small disabled</a>
 
-<h4 class="sg__hl sg__hl--subline">Normal buttons disabled</h4>
+<h4 class="sg__hl sg__hl--subline">Button Styles</h4>
 
-<button class="btn btn--disabled">Button disabled</button>
+<button class="btn btn--primary">.btn--primary</button>
+<button class="btn btn--secondary">.btn--secondary</button>
+<button class="btn btn--ghost">.btn--ghost</button>
+<button class="btn btn--cta">.btn--cta</button>
 
-<input type="button" class="btn btn--disabled" value="Input button Disabled" />
 
-<a href="#" class="btn btn--disabled">Link button disabled</a>
+<h4 class="sg__hl sg__hl--subline">Button Group alignments</h4>
 
-<h4 class="sg__hl sg__hl--subline">Block buttons</h4>
+<div class="btn-group">
+	<button class="btn">Button</button>
+	<button class="btn">Button</button>
+</div>
 
-<button class="btn btn--small btn--block">Block button small</button>
+<div class="btn-group btn-group--centered">
+	<button class="btn">Button</button>
+	<button class="btn">Button</button>
+</div>
 
-<button class="btn btn--block">Block button normal</button>
+<div class="btn-group btn-group--right">
+	<button class="btn">Button</button>
+	<button class="btn">Button</button>
+</div>
 
-<button class="btn btn--disabled btn--block btn--small">Block button small disabled</button>
-
-<button class="btn btn--disabled btn--block">Block button normal disabled</button>
+<div class="btn-group btn-group--inline">
+	<button class="btn util-left">Button</button>
+	<button class="btn util-right">Button</button>
+</div>

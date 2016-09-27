@@ -1,11 +1,12 @@
 @charset "utf-8";
+
 /**
  * Capitan layout.scss v2.0.0
  *
  * Copyright brandung GmbH & Co.KG
  * http://www.brandung.de/
  *
- * Date: 2015-01-26
+ * Date: 2016-09-05
  * MIT License (MIT)
  */
 
@@ -30,10 +31,13 @@ body::before {
 	display: none;
 }
 
+/* stylelint-disable */
 main {
-	@extend .container;
+	@extend .container;	// extend container class from bootstrap _grid.scss partial
 	@include clearfix();
 }
+/* stylelint-enable */
+
 
 /* ==========================================================================
    Grid overrides

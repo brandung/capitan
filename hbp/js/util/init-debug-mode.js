@@ -10,6 +10,8 @@
  * Initializes the needed debug stuff
  */
 Capitan.Util.initDebugMode = function ($) {
+	'use strict';
+
 	if (Capitan.Vars.isDev) {
 		// do the debug stuff
 	}

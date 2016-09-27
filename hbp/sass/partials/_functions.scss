@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /**
  * Capitan functions.scss v2.0.0
  *
@@ -20,9 +21,9 @@
  * @param {number} $targetPx - pixel value without unit
  *
  */
-@function pxToEm($targetPx) {
-	// base em is 16px wide
-	@return ($targetPx / 16) + 0em;
+@function pxToEm($targetPx, $basePx: $body-font-size-px) {
+	// base em is $basePx wide
+	@return ($targetPx / $basePx) + 0em;
 }
 
 /**

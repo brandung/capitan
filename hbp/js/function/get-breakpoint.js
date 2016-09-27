@@ -12,9 +12,11 @@
  * @return {string} - One of the breakpoints: xs, sm, md, lg, xl
  */
 Capitan.Function.getBreakpoint = function () {
+	'use strict';
+
 	var windowWidth = window.innerWidth,
 		breakpoints = Object.keys(Capitan.Vars.breakpoints),
-		breakpoint;
+		breakpoint = '';
 
 	for (var i = breakpoints.length - 1; i >= 0; i -= 1) {
 		breakpoint = Capitan.Vars.breakpoints[breakpoints[i]];

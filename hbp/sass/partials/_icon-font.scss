@@ -1,4 +1,5 @@
 @charset "utf-8";
+
 /**
  * Capitan icon-font.scss v1.0.0
  *
@@ -16,8 +17,8 @@
 
 @font-face {
 	font-family: 'iconfont';
-	src:url($folder-path + 'fonts/iconfont/iconfont.eot?o54bqx');
-	src:url($folder-path + 'fonts/iconfont/iconfont.eot?o54bqx#iefix') format('embedded-opentype'),
+	src: url($folder-path + 'fonts/iconfont/iconfont.eot?o54bqx');
+	src: url($folder-path + 'fonts/iconfont/iconfont.eot?o54bqx#iefix') format('embedded-opentype'),
 	url($folder-path + 'fonts/iconfont/iconfont.woff2?o54bqx') format('woff2'),
 	url($folder-path + 'fonts/iconfont/iconfont.ttf?o54bqx') format('truetype'),
 	url($folder-path + 'fonts/iconfont/iconfont.woff?o54bqx') format('woff'),

@@ -73,7 +73,8 @@ module.exports = function (grunt) {
 			jitGrunt: {
 				staticMappings: {
 					bower: 'grunt-bower-task',
-					replace: 'grunt-text-replace'
+					replace: 'grunt-text-replace',
+					htmlhintplus: 'grunt-htmlhint-plus'
 				}
 			},
 			init: false
@@ -97,7 +98,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('default', 'Desc', [
 		'confReady',
 		'sass',
-		'postcss',
+		'postcss:CSS',
 		'sassToHtml',
 		'tasty_swig',
 		'copy:privateUtilToPublicFolder',
@@ -133,6 +134,7 @@ module.exports = function (grunt) {
 		'copy:hotfixjsToPublicFolder',
 		'copy:hotfixcssToPublicFolder',
 		'clean:rootFilesInPrivateFolder',
+		'concat:mainVendorJS',
 		'default',
 		'project:serve'
 	]);
@@ -145,6 +147,16 @@ module.exports = function (grunt) {
 		'default',
 		'browserSync',
 		'watch'
+	]);
+
+
+	/**
+	 * The 'project:lint' task for validating private files
+	 */
+	grunt.registerTask('project:lint', [
+		'postcss:SASS',
+		'htmlhintplus',
+		'eslint'
 	]);
 
 

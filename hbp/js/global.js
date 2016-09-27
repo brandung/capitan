@@ -2,6 +2,8 @@
  * Define Global Namespace
  */
 var Capitan = function (out) {
+	'use strict';
+
 	out = out || {};
 
 	for (var i = 1; i < arguments.length; i++) {
@@ -27,8 +29,8 @@ var Capitan = function (out) {
 		currentBreakpoint: 'xs',
 		// portrait first (portrait, landscape)
 		currentOrientation: 'portrait',
-		isIE: window.navigator.userAgent.indexOf("MSIE ") > -1 || // IE <= 10
-			!(window.ActiveXObject) && "ActiveXObject" in window || // IE 11
+		isIE: window.navigator.userAgent.indexOf('MSIE ') > -1 || // IE <= 10
+			!(window.ActiveXObject) && 'ActiveXObject' in window || // IE 11
 			/x64|x32/ig.test(window.navigator.userAgent) // IE 12
 	},
 	// CSS components script namespace
@@ -54,22 +56,12 @@ basket.timeout = 60000;
  */
 basket.require(
 	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/jquery/jquery.min.js',
-		unique: 0
-	},
-	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/modernizr/modernizr.custom.min.js',
-		unique: 0
-	},
-	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/picturefill/picturefill.min.js',
-		unique: 0
-	},
-	{
-		url: Capitan.Vars.folderPath + 'js/libs/vendor/import/jquery.import.min.js',
+		url: Capitan.Vars.folderPath + 'js/cap.required-vendor.min.js',
 		unique: 0
 	}
 ).then(function () {
+	'use strict';
+
 	(function ($) {
 		// store commonly used jQuery objects to Vars object
 		Capitan.Vars = $.extend(Capitan.Vars, {
@@ -183,6 +175,8 @@ basket.require(
 		
 	})(jQuery);
 }, function () {
+	'use strict';
+
 	// <@delete
 	console.error('main.js: fetching of scripts and initialization failed');
 	// delete@>

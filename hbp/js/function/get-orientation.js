@@ -12,11 +12,13 @@
  * @return {string} - portrait or landscape
  */
 Capitan.Function.getOrientation = function () {
+	'use strict';
+
 	var windowWidth = window.innerWidth,
 		windowHeight = window.innerHeight,
-		orientation;
+		orientation = '';
 
-	if(windowWidth <= windowHeight) {
+	if (windowWidth <= windowHeight) {
 		orientation = 'portrait'
 	} else {
 		orientation = 'landscape';

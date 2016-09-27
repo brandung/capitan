@@ -10,24 +10,26 @@
  * Resize handler with debounce, should be used for resize handling purposes instead of e.g. $(window).on('resize', ...)
  */
 Capitan.Util.injectSmartResize = function ($, sr) {
+	'use strict';
+
 	// debouncing function from John Hann
 	// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
 	var debounce = function (func, threshold, execAsap) {
-		var timeout;
+		var timeout = null;
 
 		return function debounced () {
-			var obj = this,
+			var _this = this,
 				args = arguments;
 
 			if (timeout) {
 				clearTimeout(timeout);
 			} else if (execAsap) {
-				func.apply(obj, args);
+				func.apply(_this, args);
 			}
 
 			timeout = setTimeout(function () {
 				if (!execAsap) {
-					func.apply(obj, args);
+					func.apply(_this, args);
 				}
 
 				timeout = null;

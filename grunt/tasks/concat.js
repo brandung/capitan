@@ -11,5 +11,12 @@ module.exports = {
 			'<%= Config.PRIVATE_DIR %>/js/global.js'
 		],
 		dest: '<%= Config.PUBLIC_DIR %>/js/main.js'
+	},
+
+	mainVendorJS: {
+		src: [
+			'<%= Config.requiredVendorJSArr %>'
+		],
+		dest: '<%= Config.PUBLIC_DIR %>/js/cap.required-vendor.min.js'
 	}
 };
