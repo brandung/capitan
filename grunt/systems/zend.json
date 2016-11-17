@@ -11,5 +11,7 @@
     "private": "src/private/frontend",
     "public": "src/public",
     "liveURL": "",
-    "route": {}
+    "route": {
+      "/src": "src"
+    }
 }

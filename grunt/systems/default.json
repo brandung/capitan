@@ -1,0 +1,17 @@
+{
+    "folder": [
+        "src",
+        "dest/component",
+        "dest/css",
+        "dest/fonts",
+        "dest/img/",
+        "dest/js/libs/bra",
+        "dest/js/libs/vendor"
+    ],
+    "private": "src",
+    "public": "dest",
+    "liveURL": "",
+    "route": {
+      "/dest": "dest"
+    }
+}
