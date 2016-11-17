@@ -131,8 +131,6 @@ module.exports = function (grunt) {
 		'clean:gruntUpdateFolder',
 		'clean:htmlBoilerplateFolder',
 		'clean:privateRootFiles',
-		'copy:hotfixjsToPublicFolder',
-		'copy:hotfixcssToPublicFolder',
 		'clean:rootFilesInPrivateFolder',
 		'concat:mainVendorJS',
 		'default',

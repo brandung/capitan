@@ -83,26 +83,10 @@ module.exports = {
 			'tile-wide.png',
 			'.htaccess',
 			'browserconfig.xml',
-			'hotfix.css',
-			'hotfix.js',
 			'robots.txt',
 			'crossdomain.xml'
 		],
 		dest: './',
-		flatten: true
-	},
-	hotfixjsToPublicFolder: {
-		expand: true,
-		cwd: './',
-		src: 'hotfix.js',
-		dest: '<%= Config.PUBLIC_DIR %>/js/',
-		flatten: true
-	},
-	hotfixcssToPublicFolder: {
-		expand: true,
-		cwd: './',
-		src: 'hotfix.css',
-		dest: '<%= Config.PUBLIC_DIR %>/css/',
 		flatten: true
 	},
 	publicFolderToZipFolder: {

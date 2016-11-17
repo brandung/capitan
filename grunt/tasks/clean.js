@@ -13,11 +13,7 @@ module.exports = {
 		'<%= Config.PRIVATE_DIR %>/.gitignore',
 		'<%= Config.PRIVATE_DIR %>/.bower.json',
 		'<%= Config.PRIVATE_DIR %>/js/libs/',
-		'<%= Config.PRIVATE_DIR %>/fonts/',
-		'<%= Config.PRIVATE_DIR %>/hotfix.js',
-		'<%= Config.PRIVATE_DIR %>/hotfix.css',
-		'hotfix.js',
-		'hotfix.css'
+		'<%= Config.PRIVATE_DIR %>/fonts/'
 	],
 	globalJsInPublicFolder: [
 		'<%= Config.PUBLIC_DIR %>/js/global.js'

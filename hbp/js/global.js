@@ -29,7 +29,7 @@ var Capitan = function (out) {
 		currentBreakpoint: 'xs',
 		// portrait first (portrait, landscape)
 		currentOrientation: 'portrait',
-		isIE: isIE: window.navigator.userAgent.indexOf('MSIE ') > 0 || // IE <= 10
+		isIE: window.navigator.userAgent.indexOf('MSIE ') > 0 || // IE <= 10
 			window.navigator.userAgent.indexOf('Trident/') > 0 || // IE 11
 			window.navigator.userAgent.indexOf('Edge/') > 0  // IE 12
 	},
@@ -115,25 +115,6 @@ basket.require(
 						Capitan.Vars.folderPath + 'js/libs/bra/bra_styleguide-widget/bra_styleguide-widget.css'
 					],
 					unique: '<@unique@>'
-				},
-				{
-					condition: Capitan.Function.assertBreakpoint('lt', 'md'),
-					fetch: [
-						// <@bundle#h5bp-helper
-						Capitan.Vars.folderPath + 'js/libs/vendor/h5bp/helper.js',
-						Capitan.Vars.folderPath + 'js/util/h5bp-helper.js'
-						// bundle@>
-					],
-					unique: '<@unique@>'
-				},
-				{
-					// load always and always from server
-					condition: true,
-					fetch: [
-						Capitan.Vars.folderPath + 'js/hotfix.js',
-						Capitan.Vars.folderPath + 'css/hotfix.css'
-					],
-					unique: new Date().getTime()
 				},
 				{
 					condition: $('.alert'),

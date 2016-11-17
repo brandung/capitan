@@ -19,7 +19,7 @@ Capitan.Function.getOrientation = function () {
 		orientation = '';
 
 	if (windowWidth <= windowHeight) {
-		orientation = 'portrait'
+		orientation = 'portrait';
 	} else {
 		orientation = 'landscape';
 	}
