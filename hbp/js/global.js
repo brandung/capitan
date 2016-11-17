@@ -29,9 +29,9 @@ var Capitan = function (out) {
 		currentBreakpoint: 'xs',
 		// portrait first (portrait, landscape)
 		currentOrientation: 'portrait',
-		isIE: window.navigator.userAgent.indexOf('MSIE ') > -1 || // IE <= 10
-			!(window.ActiveXObject) && 'ActiveXObject' in window || // IE 11
-			/x64|x32/ig.test(window.navigator.userAgent) // IE 12
+		isIE: isIE: window.navigator.userAgent.indexOf('MSIE ') > 0 || // IE <= 10
+			window.navigator.userAgent.indexOf('Trident/') > 0 || // IE 11
+			window.navigator.userAgent.indexOf('Edge/') > 0  // IE 12
 	},
 	// CSS components script namespace
 	Component: {},
