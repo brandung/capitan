@@ -159,19 +159,8 @@ basket.require(
 			], true);
 		};
 
-		// snippets placeholder
-		// --- start|bra-pb: js ---
-		// --- end|bra-pb: js ---
-
 		// load before-render bundle before DOM ready
 		Capitan.Util.fetchBeforeRender();
-
-		/**
-		 * document ready call
-		 */
-		$(function () {
-			// ...
-		});
 		
 	})(jQuery);
 }, function () {
