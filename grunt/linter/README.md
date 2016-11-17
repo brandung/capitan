@@ -12,7 +12,7 @@ Used Plugin | https://www.npmjs.com/package/grunt-eslint
 Rule List| http://eslint.org/docs/rules/
 
 ## HMTL Hint
-Linting your generated HTML files **except** the _modules.html.  
+Linting your generated HTML files **except** the styleguide.html.  
 
 |   |   |
 |---|---|

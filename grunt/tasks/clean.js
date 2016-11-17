@@ -18,12 +18,6 @@ module.exports = {
 	globalJsInPublicFolder: [
 		'<%= Config.PUBLIC_DIR %>/js/global.js'
 	],
-	// todo refactor
-	/*build: [
-	 '<%= Config.PRIVATE_DIR %>/templates/mod/**',
-	 '<%= Config.PRIVATE_DIR %>/sass/mod/**',
-	 '<%= Config.PRIVATE_DIR %>/js/mod/**'
-	 ],*/
 	privateRootFiles: [
 		'<%= Config.PRIVATE_DIR %>/apple-touch-icon.png',
 		'<%= Config.PRIVATE_DIR %>/favicon.ico',

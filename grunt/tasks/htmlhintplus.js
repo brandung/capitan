@@ -10,7 +10,7 @@ module.exports = {
 	files: {
 		src: [
 			'<%= Config.PRIVATE_DIR %>/templates/*.html',
-			'!<%= Config.PRIVATE_DIR %>/templates/_modules.html'
+			'!<%= Config.PRIVATE_DIR %>/templates/styleguide.html'
 		]
 	}
 };
