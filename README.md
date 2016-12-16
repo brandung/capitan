@@ -1,7 +1,4 @@
-# Installation
-
-1. Copy repository from https://github.com/brandung/capitan to your local folder
-2. run npm install
+![GitHub Logo](/hbp/capitan.png)
 
 # Introduction
 ## What is capitan?
@@ -12,8 +9,32 @@ The main features are:
 * System independent
 * Components are self-contained
 * Separation between private and public assets
+* Mobile first
+* loading assets on demand for better performance
+
+Frontend Stack:
+
+* nodejs
+* Grunt
+* Vanilla JS
+* swig or handlebars.js (Template-Engine)
+* basket.js (Store files in localstorage)
+* importer.js (Load components on demand)
+* AngularJS
+* jQuery
+* SASS
+* BEM (CSS naming convention)
+* PostCSS (grunt task for post processing CSS e.g. autoprefixer, pixrem, stylelint)
+* BrowserSync (syncronised browser testing)
+* ESLinter (Javascript linter)
+* HTMLHint (validate HTML markup)
 
 # Getting started
+
+## Installation
+
+1. Copy repository from https://github.com/brandung/capitan to your local folder
+2. run npm install
 
 ## Start a new project
 
