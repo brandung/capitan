@@ -11,6 +11,7 @@ The main features are:
 * Separation between private and public assets
 * Mobile first
 * loading assets on demand for better performance
+* Automatically generated styleguide
 
 Frontend Stack:
 
