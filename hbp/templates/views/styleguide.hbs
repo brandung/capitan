@@ -1,0 +1,67 @@
+{{!-- pages/styleguide.hbs --}}
+
+{{#> base title="Styleguide" }}
+
+	{{#*inline "main-block"}}
+
+		<div data-role="sg" data-type="sg__section" data-name="0. Header" data-headline="hidden">
+			{{> header }}
+		</div>
+
+		<main id="main" role="main">
+			<div data-role="sg" data-type="sg__section" data-name="1. Colors">
+				{{> colors }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="2. Icons">
+				{{> icons }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="3. Breakpoints">
+				<div class="row" style="overflow-x: auto">
+					{{> breakpoints }}
+				</div>
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="4. Grid">
+				{{> grid }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="5. Typo Elements">
+				{{> typo }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="6. Components">
+
+				<div data-role="sg" data-type="sg__component" data-name="Alert">
+
+					{{#getJsonContext
+						'{
+							"class": "alert--warning",
+							"msgs": ["Message 1", "Message 2", "Message 3"]
+						}'
+					}}
+					{{> alert this }}
+					{{/getJsonContext}}
+
+					{{> alert class="alert--info" copy="Infotext" }}
+					{{> alert class="alert--success" copy="Success" }}
+					{{> alert class="alert--error" copy="Error" }}
+				</div>
+
+				<div data-role="sg" data-type="sg__component" data-name="Buttons">
+					{{> buttons }}
+				</div>
+
+				<div data-role="sg" data-type="sg__component" data-name="Forms">
+					{{> forms }}
+				</div>
+
+				<!-- <@newComponent@> -->
+
+			</div>
+		</main>
+
+	{{/inline}}
+
+{{/base}}

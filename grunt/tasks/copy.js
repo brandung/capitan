@@ -50,7 +50,7 @@ module.exports = {
 		src: [
 			'*/*.*',
 			'!*/*.scss',
-			'!*/*.tpl'
+			'!*/*.hbs'
 		],
 		dest: '<%= Config.PUBLIC_DIR %>/component/',
 		flatten: false

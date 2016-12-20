@@ -80,8 +80,8 @@ module.exports = function (grunt) {
 
 		console.log('Updated styleguide files');
 
-		grunt.file.write(grunt.config('Config.PRIVATE_DIR') + '/templates/tpl/partials/colors.tpl', getMarkup('colors'));
-		grunt.file.write(grunt.config('Config.PRIVATE_DIR') + '/templates/tpl/partials/icons.tpl', getMarkup('icons'));
-		grunt.file.write(grunt.config('Config.PRIVATE_DIR') + '/templates/tpl/partials/breakpoints.tpl', getMarkup('breakpoints'));
+		grunt.file.write(grunt.config('Config.PRIVATE_DIR') + '/templates/partials/includes/colors.hbs', getMarkup('colors'));
+		grunt.file.write(grunt.config('Config.PRIVATE_DIR') + '/templates/partials/includes/icons.hbs', getMarkup('icons'));
+		grunt.file.write(grunt.config('Config.PRIVATE_DIR') + '/templates/partials/includes/breakpoints.hbs', getMarkup('breakpoints'));
 	});
 };

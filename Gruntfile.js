@@ -100,7 +100,7 @@ module.exports = function (grunt) {
 		'sass',
 		'postcss:CSS',
 		'sassToHtml',
-		'tasty_swig',
+		'compile-handlebars',
 		'copy:privateUtilToPublicFolder',
 		'copy:privateHandlerToPublicFolder',
 		'copy:privateFunctionToPublicFolder',

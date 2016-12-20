@@ -31,7 +31,7 @@ module.exports = {
 	},
 	pathPlaceholder: {
 		src: [
-			'<%= Config.PRIVATE_DIR %>/templates/tpl/**/*.tpl',
+			'<%= Config.PRIVATE_DIR %>/templates/**/*.hbs',
 			'<%= Config.PRIVATE_DIR %>/js/global.js',
 			'<%= Config.PRIVATE_DIR %>/sass/**/*.*'
 		],
@@ -166,34 +166,17 @@ module.exports = {
 	},
 	includeSwigComponentPartial: {
 		src: [
-			'<%= Config.PRIVATE_DIR %>/templates/tpl/_modules.tpl'
+			'<%= Config.PRIVATE_DIR %>/templates/views/styleguide.hbs'
 		],
 		overwrite: true,
 		replacements: [
 			{
 				from: /<!--\s?<@newComponent@>\s?-->/ig,
 				to: "\n\t\t\t\t<div data-role=\"sg\" data-type=\"sg__component\" data-name=\"" + component.charAt(0).toUpperCase() + component.slice(1) +  "\">\n" +				
-				"\t\t\t\t\t{# " + component.toString() + ".tpl #}\n" +
-				"\t\t\t\t\t{% include \"../../component/" + component.toString() + "/" + component.toString() + ".tpl\" %} \n" +				
+				"\t\t\t\t\t{{> " + component.toString() + " }}\n" +
 				"\t\t\t\t</div>\n" +
 				"\t\t\t\t<!-- <@newComponent@> -->"
 			}
 		]
-	}/*,
-	includeSwigViewPartial: {
-		src: [
-			'<%= Config.PRIVATE_DIR %>/templates/tpl/_modules.tpl'
-		],
-		overwrite: true,
-		replacements: [
-			{
-				from: /<!--\s?<@newView@>\s?-->/ig,
-				to: "<h3 class=\"mod-headline\">" +
-				component.charAt(0).toUpperCase() + component.slice(1) +
-				"</h3>\n" +
-				"\t\t\t{% include \"./partials/views/" + component.toString() + ".tpl\" %} \n\n" +
-				"\t\t\t<!-- <@newView@> -->"
-			}
-		]
-	}*/
+	}
 };

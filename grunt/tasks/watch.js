@@ -34,11 +34,11 @@ module.exports = {
 	},
 	tpl: {
 		files:  [
-			'<%= Config.PRIVATE_DIR %>/templates/tpl/**/*.tpl',
-			'<%= Config.PRIVATE_DIR %>/component/**/*.tpl'
+			'<%= Config.PRIVATE_DIR %>/templates/partials/**/*.hbs',
+			'<%= Config.PRIVATE_DIR %>/component/**/*.hbs'
 		],
 		tasks: [
-			'tasty_swig'
+			'compile-handlebars'
 		]
 	}
 };

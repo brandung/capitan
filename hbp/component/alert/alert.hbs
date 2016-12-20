@@ -1,0 +1,21 @@
+{{!--
+ Capitan alert v1.0.0
+
+ Copyright brandung GmbH & Co.KG
+ http://www.brandung.de/
+
+ Date: 2015-07-28
+ MIT License (MIT)
+--}}
+<div class="alert {{class}}">
+	{{#if copy}}
+	<p>{{copy}}</p>
+	{{/if}}
+	{{#if msgs}}
+	<ul>
+		{{#each msgs}}
+		<li>{{this}}</li>
+		{{/each}}
+	</ul>
+	{{/if}}
+</div>
