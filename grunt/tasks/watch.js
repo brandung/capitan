@@ -34,7 +34,7 @@ module.exports = {
 	},
 	tpl: {
 		files:  [
-			'<%= Config.PRIVATE_DIR %>/templates/partials/**/*.hbs',
+			'<%= Config.PRIVATE_DIR %>/templates/**/*.hbs',
 			'<%= Config.PRIVATE_DIR %>/component/**/*.hbs'
 		],
 		tasks: [
