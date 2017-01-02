@@ -17,7 +17,7 @@ nb-configuration.xml
 .metadata
 .gradle
 bin/
-tmp/
+#tmp/
 *.tmp
 *.bak
 *.swp
@@ -87,4 +87,3 @@ Icon
 ._*
 
 ### Include custom ignores here ###
-
