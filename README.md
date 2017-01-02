@@ -1,4 +1,4 @@
-![GitHub Logo](/hbp/capitan.png)
+![GitHub Logo](/capitan/tmp/capitan.png)
 
 # Introduction
 ## What is capitan?
