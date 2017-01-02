@@ -117,13 +117,14 @@ module.exports = function (grunt) {
 	 * and copy the assets into the given folder structure.
 	 */
 	grunt.registerTask('project:init', 'Start the initializing process', [
+		'capitan:intro',
 		'prompt:init',
 		'replace:init',
 		'confReady',
 		'mkdir:projectStructure',
 		'copy:htmlBoilerplateToPrivate',
 		'replace:pathPlaceholder',
-		'replace:bowerPathPlaceholder',	
+		'replace:bowerPathPlaceholder',
 		'bower:install',
 		'copy:privateFontsToPublicFolder',
 		'copy:privateLibsToPublicFolder',
@@ -142,6 +143,7 @@ module.exports = function (grunt) {
 	 * The 'project:serve' task for developing
 	 */
 	grunt.registerTask('project:serve', [
+		'capitan:intro',
 		'default',
 		'browserSync',
 		'watch'

@@ -5,6 +5,14 @@
 var grunt = require('grunt'),
 	Msg = {};
 
+Msg.intro = function () {
+	grunt.log.writeln("\n ####     ##    #####   #  #####    ##    #    #  ");
+	grunt.log.writeln("#    #   #  #   #    #  #    #     #  #   ##   #  ");
+	grunt.log.writeln("#       #    #  #    #  #    #    #    #  # #  #  ");
+	grunt.log.writeln("#       ######  #####   #    #    ######  #  # #  ");
+	grunt.log.writeln("#    #  #    #  #       #    #    #    #  #   ##  ");
+	grunt.log.writeln(" ####   #    #  #       #    #    #    #  #    # \n");
+}
 
 Msg.warnConfig = function () {
 	grunt.log.writeln('\n**************************************'['red']);
