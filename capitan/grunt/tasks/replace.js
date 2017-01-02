@@ -76,14 +76,14 @@ module.exports = {
 		overwrite: true,
 		replacements: [
 			{
-				from: '<%= grunt.config("Config.LIVE_URL") %>',
-				to: '<%= grunt.config("Config.PUBLIC_DIR") %>'
+				from: '<%= grunt.config("Config.LIVE_URL") %>/',
+				to: ''
 			}
 		]
 	},
 	zipCSSPathMain: {
 		src: [
-			'<%= Config.PKG_NAME %>/<%= Config.PUBLIC_DIR %>/css/*.css'
+			'<%= Config.PKG_NAME %>/css/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -95,7 +95,7 @@ module.exports = {
 	},
 	zipCSSPathComponents: {
 		src: [
-			'<%= Config.PKG_NAME %>/<%= Config.PUBLIC_DIR %>/component/**/*.css'
+			'<%= Config.PKG_NAME %>/component/**/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -172,7 +172,7 @@ module.exports = {
 		replacements: [
 			{
 				from: /<!--\s?<@newComponent@>\s?-->/ig,
-				to: "\n\t\t\t\t<div data-role=\"sg\" data-type=\"sg__component\" data-name=\"" + component.charAt(0).toUpperCase() + component.slice(1) +  "\">\n" +				
+				to: "\n\t\t\t\t<div data-role=\"sg\" data-type=\"sg__component\" data-name=\"" + component.charAt(0).toUpperCase() + component.slice(1) +  "\">\n" +
 				"\t\t\t\t\t{{> " + component.toString() + " }}\n" +
 				"\t\t\t\t</div>\n" +
 				"\t\t\t\t<!-- <@newComponent@> -->"

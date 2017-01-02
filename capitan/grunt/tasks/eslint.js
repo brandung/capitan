@@ -10,6 +10,7 @@ module.exports = {
 	target: [
 		'<%= Config.PRIVATE_DIR %>/component/**/*.js',
 		'<%= Config.PRIVATE_DIR %>/js/**/*.js',
-		'!<%= Config.PRIVATE_DIR %>/component/**/vendor/**/*.js'
+		'!<%= Config.PRIVATE_DIR %>/component/**/vendor/**/*.js',
+		'!<%= Config.PRIVATE_DIR %>/js/**/vendor/**/*.js'
 	]
 };

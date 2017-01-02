@@ -1,0 +1,17 @@
+{
+    "folder": [
+        "../public/component",
+        "../public/css",
+        "../public/fonts",
+        "../public/img/",
+        "../public/js/libs/bra",
+        "../public/js/libs/vendor"
+    ],
+	"root": "..",
+    "private": "src",
+    "public": "public",
+    "liveURL": "",
+    "route": {
+      "/public": "../public/"
+    }
+}

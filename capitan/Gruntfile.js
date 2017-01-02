@@ -122,20 +122,17 @@ module.exports = function (grunt) {
 		'replace:init',
 		'confReady',
 		'mkdir:projectStructure',
-		'copy:htmlBoilerplateToPrivate',
 		'replace:pathPlaceholder',
 		'replace:bowerPathPlaceholder',
 		'bower:install',
 		'copy:privateFontsToPublicFolder',
-		'copy:privateLibsToPublicFolder',
 		'copy:privateRootFilesToRoot',
 		'clean:gruntUpdateFolder',
-		'clean:htmlBoilerplateFolder',
-		'clean:privateRootFiles',
-		'clean:rootFilesInPrivateFolder',
+		'clean:init',
 		'concat:mainVendorJS',
 		'default',
-		'project:serve'
+		'browserSync',
+		'watch'
 	]);
 
 
@@ -191,7 +188,6 @@ module.exports = function (grunt) {
 		'replace:zipFolderAssetPath',
 		'replace:zipCSSPathComponents',
 		'replace:zipCSSPathMain',
-		'clean:zipTplFolder',
 		'zip',
 		'clean:zipFolder'
 	]);

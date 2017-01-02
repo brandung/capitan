@@ -4,24 +4,19 @@
  * https://www.npmjs.org/package/grunt-contrib-copy
  */
 module.exports = {
-	htmlBoilerplateToPrivate: {
-		expand: true,
-		cwd: './hbp/',
-		src: '**',
-		dest: '<%= Config.PRIVATE_DIR %>/',
-		dot: true
-	},
 	privateFontsToPublicFolder: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/fonts/',
 		src: '**',
 		dest: '<%= Config.PUBLIC_DIR %>/fonts/'
 	},
-	privateLibsToPublicFolder: {
+	privateRootFilesToRoot: {
 		expand: true,
-		cwd: '<%= Config.PRIVATE_DIR %>/js/libs/',
+		cwd: 'tmp/',
 		src: '**',
-		dest: '<%= Config.PUBLIC_DIR %>/js/libs/'
+		dest: '<%= Config.PUBLIC_DIR %>/',
+		flatten: true,
+		dot: true
 	},
 	privateUtilToPublicFolder: {
 		expand: true,
@@ -73,22 +68,6 @@ module.exports = {
 			return path.join(newDest, path.basename(src));
 		}
 	},
-	privateRootFilesToRoot: {
-		expand: true,
-		cwd: '<%= Config.PRIVATE_DIR %>/',
-		src: [
-			'apple-touch-icon.png',
-			'favicon.ico',
-			'tile.png',
-			'tile-wide.png',
-			'.htaccess',
-			'browserconfig.xml',
-			'robots.txt',
-			'crossdomain.xml'
-		],
-		dest: './',
-		flatten: true
-	},
 	publicFolderToZipFolder: {
 		expand: true,
 		cwd: '<%= Config.PUBLIC_DIR %>/',
@@ -98,7 +77,7 @@ module.exports = {
 	templatesToZipFolder: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/templates/',
-		src: '**',
+		src: '*.html',
 		dest: '<%= Config.PKG_NAME %>/'
 	},
 	rootFilesToZipFolder: {

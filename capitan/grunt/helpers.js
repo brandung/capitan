@@ -136,7 +136,8 @@ Helpers.getFilename = function (file) {
  */
 Helpers.getReponame = function () {
 	var cwd = path.resolve(process.cwd(), '');
-	return cwd.split(path.sep).pop();
+	// get the root folder from cwd path
+	return cwd.split(path.sep).reverse()[1];
 };
 
 

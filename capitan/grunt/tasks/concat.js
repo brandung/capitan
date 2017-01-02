@@ -7,7 +7,7 @@
 module.exports = {
 	mainJS: {
 		src: [
-			'<%= Config.PUBLIC_DIR %>/js/libs/vendor/basket/basket.full.custom.min.js',
+			'<%= Config.PRIVATE_DIR %>/js/libs/vendor/basket/basket.full.custom.min.js',
 			'<%= Config.PRIVATE_DIR %>/js/global.js'
 		],
 		dest: '<%= Config.PUBLIC_DIR %>/js/main.js'

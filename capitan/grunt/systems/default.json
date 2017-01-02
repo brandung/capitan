@@ -1,0 +1,17 @@
+{
+    "folder": [
+        "../dist/component",
+        "../dist/css",
+        "../dist/fonts",
+        "../dist/img/",
+        "../dist/js/libs/bra",
+        "../dist/js/libs/vendor"
+    ],
+	"root": "..",
+    "private": "src",
+    "public": "dist",
+    "liveURL": "",
+    "route": {
+      "/dist": "../dist"
+    }
+}

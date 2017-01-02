@@ -40,13 +40,14 @@ Config.syncRoutes = Config.systemPaths.route;
 /**
  * Define our global directory paths
  */
+Config.ROOT_DIR = Config.systemPaths.root;
 Config.PRIVATE_DIR = Config.systemPaths.private;
-Config.PUBLIC_DIR = Config.systemPaths.public;
-Config.LIVE_URL = Config.systemPaths.liveURL + '/' + Config.PUBLIC_DIR;
-Config.SRC_DIR = Config.systemPaths.private + '/' + Config.srcFolderName;
-Config.BUILD_DIR = Config.systemPaths.private + '/' + Config.buildFolderName;
-Config.ZIP_PUBLIC_FOLDER = Config.PKG_NAME + '/' + Config.PUBLIC_DIR;
-Config.PUBLIC_JS_VENDOR = Config.PUBLIC_DIR + '/js/libs/vendor';
+Config.PUBLIC_DIR = Config.ROOT_DIR + '/' + Config.systemPaths.public;
+Config.LIVE_URL = Config.systemPaths.liveURL + '/' + Config.systemPaths.public;
+Config.SRC_DIR = Config.PRIVATE_DIR + '/' + Config.srcFolderName;
+Config.BUILD_DIR = Config.PRIVATE_DIR + '/' + Config.buildFolderName;
+Config.ZIP_PUBLIC_FOLDER = Config.PKG_NAME;
+Config.PRIVATE_JS_VENDOR = Config.PRIVATE_DIR + '/js/libs/vendor';
 
 /**
  * This is a collection of file patterns that refer to our app code (the
@@ -67,10 +68,10 @@ Config.app_files = {
  * @type {*[]}
  */
 Config.requiredVendorJSArr = [
-	Config.PUBLIC_JS_VENDOR + '/jquery/jquery.min.js',
-	Config.PUBLIC_JS_VENDOR + '/modernizr/modernizr.custom.min.js',
-	Config.PUBLIC_JS_VENDOR + '/picturefill/picturefill.min.js',
-	Config.PUBLIC_JS_VENDOR + '/import/jquery.import.min.js'
+	Config.PRIVATE_JS_VENDOR + '/jquery/jquery.min.js',
+	Config.PRIVATE_JS_VENDOR + '/modernizr/modernizr.custom.min.js',
+	Config.PRIVATE_JS_VENDOR + '/picturefill/picturefill.min.js',
+	Config.PRIVATE_JS_VENDOR + '/import/jquery.import.min.js'
 ];
 
 module.exports = Config;
