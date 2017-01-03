@@ -44,7 +44,7 @@ module.exports = {
 				// specifies the last two versions of any mainstream browser,
 				// or any exceeding 2% market share
 				require('autoprefixer')({
-					browsers: ['last 3 versions', '> 2%']
+					browsers: ['last 2 versions', '> 2%']
 				})
 			]
 		},
