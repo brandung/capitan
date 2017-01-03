@@ -170,6 +170,7 @@ module.exports = function (grunt) {
 		'uglify:global',
 		'uglify:bra',
 		'assetBundle',
+		'uglify:bundle',
 		'uglify:mainJS',
 		'cssmin',
 		'notify:finish'
