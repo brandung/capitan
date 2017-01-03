@@ -78,7 +78,7 @@ module.exports = {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/templates/',
 		src: '*.html',
-		dest: '<%= Config.PKG_NAME %>/'
+		dest: '<%= Config.ZIP_PUBLIC_FOLDER %>/'
 	},
 	rootFilesToZipFolder: {
 		expand: true,
@@ -93,7 +93,7 @@ module.exports = {
 			'tile-wide.png',
 			'crossdomain.xml'
 		],
-		dest: '<%= Config.PKG_NAME %>/'
+		dest: '<%= Config.ZIP_PUBLIC_FOLDER %>/'
 	},
 	gruntUpdate: {
 		expand: true,

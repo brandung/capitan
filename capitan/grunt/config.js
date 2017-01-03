@@ -46,7 +46,7 @@ Config.PUBLIC_DIR = Config.ROOT_DIR + '/' + Config.systemPaths.public;
 Config.LIVE_URL = Config.systemPaths.liveURL + '/' + Config.systemPaths.public;
 Config.SRC_DIR = Config.PRIVATE_DIR + '/' + Config.srcFolderName;
 Config.BUILD_DIR = Config.PRIVATE_DIR + '/' + Config.buildFolderName;
-Config.ZIP_PUBLIC_FOLDER = Config.PKG_NAME;
+Config.ZIP_PUBLIC_FOLDER = '_' + Config.PKG_NAME + '_';
 Config.PRIVATE_JS_VENDOR = Config.PRIVATE_DIR + '/js/libs/vendor';
 
 /**

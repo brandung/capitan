@@ -19,10 +19,15 @@ module.exports = {
 	globalJsInPublicFolder: [
 		'<%= Config.PUBLIC_DIR %>/js/global.js'
 	],
-	bundleFolder: [
-		'<%= Config.PUBLIC_DIR %>/js/bundle/*',
-		'<%= Config.PUBLIC_DIR %>/css/bundle/*'
-	],
+	bundleFolder:  {
+		options: {
+			'force': true
+		},
+		src: [
+			'<%= Config.PUBLIC_DIR %>/js/bundle/*',
+			'<%= Config.PUBLIC_DIR %>/css/bundle/*'
+		]
+	},
 	zipTplFolder: [
 		'<%= Config.PKG_NAME %>/tpl/'
 	],

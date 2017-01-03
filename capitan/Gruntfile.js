@@ -95,7 +95,7 @@ module.exports = function (grunt) {
 	/**
 	 * The 'default' task
 	 */
-	grunt.registerTask('default', 'Desc', [
+	grunt.registerTask('default', 'Default tasks to compile assets', [
 		'confReady',
 		'sass',
 		'postcss:CSS',
@@ -139,7 +139,7 @@ module.exports = function (grunt) {
 	/**
 	 * The 'project:serve' task for developing
 	 */
-	grunt.registerTask('project:serve', [
+	grunt.registerTask('project:serve', 'Start the developing task', [
 		'capitan:intro',
 		'default',
 		'browserSync',
@@ -150,7 +150,8 @@ module.exports = function (grunt) {
 	/**
 	 * The 'project:lint' task for validating private files
 	 */
-	grunt.registerTask('project:lint', [
+	grunt.registerTask('project:lint', 'Lint your public JS and private SASS and HTML files', [
+		'capitan:intro',
 		'postcss:SASS',
 		'htmlhintplus',
 		'eslint'
@@ -160,35 +161,32 @@ module.exports = function (grunt) {
 	/**
 	 * The 'project:finish' task prepares files for deployment
 	 */
-	grunt.registerTask('project:finish', [
+	grunt.registerTask('project:finish', 'Minify and concatenate files for live environment', [
+		'capitan:intro',
 		'default',
-		'replace:deleteCssBlock',
-		'replace:importJsStorageKey',
-		'replace:deleteJsBlock',
-		'clean:bundleFolder',
-		'uglify:component',
-		'uglify:global',
-		'uglify:bra',
-		'assetBundle',
-		'uglify:bundle',
-		'uglify:mainJS',
-		'cssmin',
+		'sub:finish',
 		'notify:finish'
+	]);
+
+
+	/**
+	 * The 'project:export' task prepare your project for a standalone version
+	 */
+	grunt.registerTask('project:export', 'Export project for a standalone version', [
+		'capitan:intro',
+		'default',
+		'sub:finish',
+		'sub:zip',
+		'notify:export'
 	]);
 
 
 	/**
 	 * ZIP the project
 	 */
-	grunt.registerTask('create:zip', [
-		'confReady',
-		'mkdir:zipFolder',
-		'copy:publicFolderToZipFolder',
-		'copy:templatesToZipFolder',
-		'copy:rootFilesToZipFolder',
-		'replace:zipFolderAssetPath',
-		'replace:zipCSSPathComponents',
-		'replace:zipCSSPathMain',
+	grunt.registerTask('create:zip', 'Create a standalone version and zip it', [
+		'capitan:intro',
+		'sub:zip',
 		'zip',
 		'clean:zipFolder'
 	]);
@@ -197,7 +195,7 @@ module.exports = function (grunt) {
 	/**
 	 * Create 'styleguide'
 	 */
-	grunt.registerTask('create:styleguide', [
+	grunt.registerTask('create:styleguide', 'Update manually the styleguide.html', [
 		'confReady',
 		'sassToHtml'
 	]);
@@ -206,7 +204,7 @@ module.exports = function (grunt) {
 	/**
 	 * Create new component
 	 */
-	grunt.registerTask('create:component', [
+	grunt.registerTask('create:component', 'Create new component', [
 		'confReady',
 		'file-creator:componentFiles',
 		'replace:addNewComponentImport',
@@ -219,11 +217,40 @@ module.exports = function (grunt) {
 	/**
 	 * Update Grunt files
 	 */
-	grunt.registerTask('update:grunt', [
+	grunt.registerTask('update:grunt', 'Update grunt assets from https://github.com/brandung/capitan', [
 		'confReady',
 		'bower:install',
 		'copy:gruntUpdate',
 		'clean:gruntUpdateFolder',
 		'replace:bowerPathPlaceholder'
+	]);
+
+
+	/**
+	 * Sub Tasks
+	 */
+	grunt.registerTask('sub:finish', [
+		'replace:deleteCssBlock',
+		'replace:importJsStorageKey',
+		'replace:deleteJsBlock',
+		'clean:bundleFolder',
+		'uglify:component',
+		'uglify:global',
+		'uglify:bra',
+		'assetBundle',
+		'uglify:bundle',
+		'uglify:mainJS',
+		'cssmin'
+	]);
+
+	grunt.registerTask('sub:zip', [
+		'confReady',
+		'mkdir:zipFolder',
+		'copy:publicFolderToZipFolder',
+		'copy:templatesToZipFolder',
+		'copy:rootFilesToZipFolder',
+		'replace:zipFolderAssetPath',
+		'replace:zipCSSPathComponents',
+		'replace:zipCSSPathMain'
 	]);
 };

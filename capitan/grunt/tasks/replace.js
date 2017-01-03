@@ -69,9 +69,9 @@ module.exports = {
 	},
 	zipFolderAssetPath: {
 		src: [
-			'<%= Config.PKG_NAME %>/**/*.js',
-			'<%= Config.PKG_NAME %>/**/*.html',
-			'!<%= Config.PKG_NAME %>/**/*.css'
+			'<%= Config.ZIP_PUBLIC_FOLDER %>/**/*.js',
+			'<%= Config.ZIP_PUBLIC_FOLDER %>/**/*.html',
+			'!<%= Config.ZIP_PUBLIC_FOLDER %>/**/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -83,7 +83,7 @@ module.exports = {
 	},
 	zipCSSPathMain: {
 		src: [
-			'<%= Config.PKG_NAME %>/css/*.css'
+			'<%= Config.ZIP_PUBLIC_FOLDER %>/css/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -95,7 +95,7 @@ module.exports = {
 	},
 	zipCSSPathComponents: {
 		src: [
-			'<%= Config.PKG_NAME %>/component/**/*.css'
+			'<%= Config.ZIP_PUBLIC_FOLDER %>/component/**/*.css'
 		],
 		overwrite: true,
 		replacements: [

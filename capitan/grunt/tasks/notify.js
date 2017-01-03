@@ -9,5 +9,11 @@ module.exports = {
 			title: 'DEPLOY Task finished!',
 			message: 'Nice Job, dude'
 		}
+	},
+	export: {
+		options: {
+			title: 'EXPORT Task finished!',
+			message: 'Please upload to server'
+		}
 	}
 };
