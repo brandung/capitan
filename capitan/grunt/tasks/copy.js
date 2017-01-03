@@ -12,7 +12,7 @@ module.exports = {
 	},
 	privateRootFilesToRoot: {
 		expand: true,
-		cwd: 'tmp/',
+		cwd: 'temp/',
 		src: '**',
 		dest: '<%= Config.PUBLIC_DIR %>/',
 		flatten: true,

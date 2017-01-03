@@ -11,7 +11,7 @@ module.exports = {
 		src: [
 			'<%= Config.PRIVATE_DIR %>/fonts/',
 			'<%= Config.PUBLIC_DIR %>/capitan.png',
-			'./tmp/',
+			'./temp/',
 			'../README.md',
 			'../LICENSE'
 		]
