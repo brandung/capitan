@@ -19,11 +19,11 @@ module.exports = {
 	},
 	component: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/component/',
+		cwd: '<%= Config.PUBLIC_DIR %>/components/',
 		src: [
 			'**/*.css'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/component/',
+		dest: '<%= Config.PUBLIC_DIR %>/components/',
 		ext: '.css',
 		options: {
 			report: 'min'

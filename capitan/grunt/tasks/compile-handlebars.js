@@ -15,7 +15,7 @@ module.exports = {
 	 helpers: './grunt/hbs-helpers.js',
      partials: [
        '<%= Config.PRIVATE_DIR %>/templates/partials/**/*.hbs',
-       '<%= Config.PRIVATE_DIR %>/component/**/*.hbs'
+       '<%= Config.PRIVATE_DIR %>/components/**/*.hbs'
      ]
    }
 }

@@ -9,7 +9,7 @@ module.exports = {
 	styles: {
 		files: [
 			'<%= Config.PRIVATE_DIR %>/sass/**/*.scss',
-			'<%= Config.PRIVATE_DIR %>/component/**/*.scss'
+			'<%= Config.PRIVATE_DIR %>/components/**/*.scss'
 		],
 		tasks: [
 			'sass',
@@ -20,7 +20,7 @@ module.exports = {
 	scripts: {
 		files: [
 			'<%= Config.PRIVATE_DIR %>/js/**/*.js',
-			'<%= Config.PRIVATE_DIR %>/component/**/*.js'
+			'<%= Config.PRIVATE_DIR %>/components/**/*.js'
 		],
 		tasks: [
 			'copy:privateHandlerToPublicFolder',
@@ -35,7 +35,7 @@ module.exports = {
 	tpl: {
 		files:  [
 			'<%= Config.PRIVATE_DIR %>/templates/**/*.hbs',
-			'<%= Config.PRIVATE_DIR %>/component/**/*.hbs'
+			'<%= Config.PRIVATE_DIR %>/components/**/*.hbs'
 		],
 		tasks: [
 			'compile-handlebars'

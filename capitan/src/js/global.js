@@ -119,21 +119,21 @@ basket.require(
 				{
 					condition: $('.alert'),
 					fetch: [
-						Capitan.Vars.folderPath + 'component/alert/alert.css'
+						Capitan.Vars.folderPath + 'components/alert/alert.css'
 					],
 					unique: '<@unique@>'
 				},
 				{
 					condition: $('form'),
 					fetch: [
-						Capitan.Vars.folderPath + 'component/forms/forms.css'
+						Capitan.Vars.folderPath + 'components/forms/forms.css'
 					],
 					unique: '<@unique@>'
 				},
 				{
 					condition: $('.btn'),
 					fetch: [
-						Capitan.Vars.folderPath + 'component/buttons/buttons.css'
+						Capitan.Vars.folderPath + 'components/buttons/buttons.css'
 					],
 					unique: '<@unique@>'
 				}// <@newComponent@>

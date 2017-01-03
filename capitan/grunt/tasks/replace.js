@@ -95,7 +95,7 @@ module.exports = {
 	},
 	zipCSSPathComponents: {
 		src: [
-			'<%= Config.ZIP_PUBLIC_FOLDER %>/component/**/*.css'
+			'<%= Config.ZIP_PUBLIC_FOLDER %>/components/**/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -120,7 +120,7 @@ module.exports = {
 	deleteCssBlock: {
 		src: [
 			'<%= Config.PUBLIC_DIR %>/css/*.css',
-			'<%= Config.PUBLIC_DIR %>/component/*.css'
+			'<%= Config.PUBLIC_DIR %>/components/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -134,7 +134,7 @@ module.exports = {
 		src: [
 			'<%= Config.PUBLIC_DIR %>/js/*.js',
 			'<%= Config.PUBLIC_DIR %>/js/handle/*.js',
-			'<%= Config.PUBLIC_DIR %>/component/*.js',
+			'<%= Config.PUBLIC_DIR %>/components/*.js',
 			'<%= Config.PUBLIC_DIR %>/js/function/*.js',
 			'<%= Config.PUBLIC_DIR %>/js/util/*.js'
 		],
@@ -157,7 +157,7 @@ module.exports = {
 				to: ",\n\t\t\t\t{" +
 				"\n\t\t\t\t\tcondition: $('." + component + "')," +
 				"\n\t\t\t\t\tfetch: [" +
-				"\n\t\t\t\t\t\tCapitan.Vars.folderPath + 'component/" + component + "/" + component + ".css'" +
+				"\n\t\t\t\t\t\tCapitan.Vars.folderPath + 'components/" + component + "/" + component + ".css'" +
 				"\n\t\t\t\t\t]," +
 				"\n\t\t\t\t\tunique: '<@unique@>'" +
 				"\n\t\t\t\t}// <@newComponent@>"

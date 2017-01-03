@@ -41,18 +41,18 @@ module.exports = {
 	},
 	privateComponentToPublicFolder: {
 		expand: true,
-		cwd: '<%= Config.PRIVATE_DIR %>/component/',
+		cwd: '<%= Config.PRIVATE_DIR %>/components/',
 		src: [
 			'*/*.*',
 			'!*/*.scss',
 			'!*/*.hbs'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/component/',
+		dest: '<%= Config.PUBLIC_DIR %>/components/',
 		flatten: false
 	},
 	publicComponentVendorToPublicJSFolder: {
 		expand: true,
-		cwd: '<%= Config.PRIVATE_DIR %>/component/',
+		cwd: '<%= Config.PRIVATE_DIR %>/components/',
 		src: ['*/js/**/*.*'],
 		dest: '<%= Config.PUBLIC_DIR %>/js/',
 		flatten: false,

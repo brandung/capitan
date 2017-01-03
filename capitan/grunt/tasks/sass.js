@@ -14,9 +14,9 @@ module.exports = {
 	},
 	component: {
 		expand: true,
-		cwd: '<%= Config.PRIVATE_DIR %>/component',
+		cwd: '<%= Config.PRIVATE_DIR %>/components',
 		src: ['**/*.scss'],
-		dest: '<%= Config.PUBLIC_DIR %>/component',
+		dest: '<%= Config.PUBLIC_DIR %>/components',
 		ext: '.css'
 	}
 };

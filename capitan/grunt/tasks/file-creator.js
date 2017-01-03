@@ -11,7 +11,7 @@ var grunt = require('grunt'),
 module.exports = {
 	componentFiles: [
 		{
-			file: '<%= Config.PRIVATE_DIR %>/component/' + component + '/' + component + '.scss',
+			file: '<%= Config.PRIVATE_DIR %>/components/' + component + '/' + component + '.scss',
 			method: function (fs, fd, done) {
 				var content = "@charset \"utf-8\";\n" +
 					"/**\n" +
@@ -48,7 +48,7 @@ module.exports = {
 			}
 		},
 		{
-			file: '<%= Config.PRIVATE_DIR %>/component/' + component + '/' + component + '.hbs',
+			file: '<%= Config.PRIVATE_DIR %>/components/' + component + '/' + component + '.hbs',
 			method: function (fs, fd, done) {
 				var content = "<!--\n" +
 					" Capitan " + component + ".hbs v1.0.0\n" +

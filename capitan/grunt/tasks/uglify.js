@@ -24,9 +24,9 @@ module.exports = {
 	},
 	component: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/component/',
+		cwd: '<%= Config.PUBLIC_DIR %>/components/',
 		src: ['**/*.js'],
-		dest: '<%= Config.PUBLIC_DIR %>/component/'
+		dest: '<%= Config.PUBLIC_DIR %>/components/'
 	},
 	global: {
 		expand: true,

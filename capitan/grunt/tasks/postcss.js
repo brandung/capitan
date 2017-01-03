@@ -25,7 +25,7 @@ module.exports = {
 		files: [
 			{
 				src: [
-					'<%= Config.PRIVATE_DIR %>/component/**/*.scss',
+					'<%= Config.PRIVATE_DIR %>/components/**/*.scss',
 					'<%= Config.PRIVATE_DIR %>/sass/**/*.scss',
 					'!<%= Config.PRIVATE_DIR %>/sass/vendor/**/*.scss'
 				]
@@ -59,11 +59,11 @@ module.exports = {
 		},
 		component: {
 			expand: true,
-			cwd: '<%= Config.PUBLIC_DIR %>/component/',
+			cwd: '<%= Config.PUBLIC_DIR %>/components/',
 			src: [
 				'**/*.css'
 			],
-			dest: '<%= Config.PUBLIC_DIR %>/component/',
+			dest: '<%= Config.PUBLIC_DIR %>/components/',
 			ext: '.css'
 		}
 	}

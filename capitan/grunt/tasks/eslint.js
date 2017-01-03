@@ -8,9 +8,9 @@ module.exports = {
 		configFile: process.cwd() + '/grunt/linter/.eslintrc'
 	},
 	target: [
-		'<%= Config.PRIVATE_DIR %>/component/**/*.js',
+		'<%= Config.PRIVATE_DIR %>/components/**/*.js',
 		'<%= Config.PRIVATE_DIR %>/js/**/*.js',
-		'!<%= Config.PRIVATE_DIR %>/component/**/vendor/**/*.js',
+		'!<%= Config.PRIVATE_DIR %>/components/**/vendor/**/*.js',
 		'!<%= Config.PRIVATE_DIR %>/js/**/vendor/**/*.js'
 	]
 };
