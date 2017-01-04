@@ -22,24 +22,24 @@
 *
 * desc: button-mixin to create consistent buttons
 *
-* @param  $btn-height           [px value: 40px]
-* @param  $btn-block            [boolean: true/false]
-* @param  $btn-font-size          [number: 16, 22, 26, etc.]        //just the number, no "px", "em", "rem", etc.
-* @param  $btn-font-weight        [number: 100, 200, 300, etc.]
-* @param  $btn-letter-spacing       [px value: 5px]
-* @param  $btn-text-transform       [string: uppercase, etc.]
+* @param  $btn-height				[px value: 40px] // just needed for the line-height property. Set no fixed height for buttons!
+* @param  $btn-block				[boolean: true/false]
+* @param  $btn-font-size			[number: 16, 22, 26, etc.]        //just the number, no "px", "em", "rem", etc.
+* @param  $btn-font-weight			[number: 100, 200, 300, etc.]
+* @param  $btn-letter-spacing		[px value: 5px]
+* @param  $btn-text-transform		[string: uppercase, etc.]
 *
-* @param  $btn-bg-color         [any color]
-* @param  $btn-bg-color-hover       [any color]
-* @param  $btn-bg-color-active      [any color]
+* @param  $btn-bg-color				[any color]
+* @param  $btn-bg-color-hover		[any color]
+* @param  $btn-bg-color-active		[any color]
 *
-* @param  $btn-border-color       [any color]
-* @param  $btn-border-color-hover     [any color]
-* @param  $btn-border-color-active    [any color]
+* @param  $btn-border-color			[any color]
+* @param  $btn-border-color-hover	[any color]
+* @param  $btn-border-color-active	[any color]
 *
-* @param  $btn-font-color         [any color]
-* @param  $btn-font-color-hover     [any color]
-* @param  $btn-font-color-active      [any color]
+* @param  $btn-font-color			[any color]
+* @param  $btn-font-color-hover		[any color]
+* @param  $btn-font-color-active	[any color]
 *
 *
 * usage:
