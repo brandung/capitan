@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+/**
+ * Capitan SASS boilerplate v3.0.0
+ *
+ * Copyright brandung GmbH & Co.KG
+ * http://www.brandung.de/
+ *
+ * Date: 2016-01-26
+ * MIT License (MIT)
+ */
+
+
+/* ==========================================================================
+   Core functions, variables and mixins
+   ========================================================================== */
+
+@import "partials/functions";
+@import "partials/variables";
+@import "partials/mixins";
+
+
+/* ==========================================================================
+   Reset and dependencies
+   ========================================================================== */
+
+// normalize
+// https://github.com/necolas/normalize.css
+@import "vendor/normalize";
+
+// h5bp main.css
+// https://github.com/h5bp/html5-boilerplate
+@import "vendor/h5bp";
+
+// bootstrap v.4 grid mixins
+// http://v4-alpha.getbootstrap.com/
+@import "vendor/bootstrap/mixins/breakpoints";
+@import "vendor/bootstrap/mixins/grid-framework";
+@import "vendor/bootstrap/mixins/grid";
+@import "vendor/bootstrap/grid";
+
+
+/* ==========================================================================
+   Default layout partials
+   ========================================================================== */
+@import "partials/layout";
+@import "partials/typo";
+@import "partials/icon-font";
+
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+@import "../components/header/header";
+@import "../components/footer/footer";
+@import "../components/nav-main/nav-main";
+
+
+/* ==========================================================================
+   Utility classes
+   ========================================================================== */
+@import "partials/utils";

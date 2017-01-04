@@ -1,0 +1,103 @@
+{{!-- views/styleguide.hbs --}}
+
+{{#> base title="Styleguide" }}
+
+	{{#*inline "main-block"}}
+
+		<div data-role="sg" data-type="sg__section" data-name="0. Header" data-headline="hidden">
+			{{> header }}
+		</div>
+
+		<main id="main" role="main">
+			<div data-role="sg" data-type="sg__section" data-name="1. Colors">
+				{{> colors }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="2. Icons">
+				{{> icons }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="3. Breakpoints">
+				<div class="row" style="overflow-x: auto">
+					{{> breakpoints }}
+				</div>
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="4. Grid">
+				{{> grid }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="5. Typo Elements">
+				{{> typo }}
+			</div>
+
+			<div data-role="sg" data-type="sg__section" data-name="6. Components">
+
+				<div data-role="sg" data-type="sg__component" data-name="Alert">
+
+					{{#getJsonContext
+						'{
+							"copy": "Warning",
+							"class": "alert--warning",
+							"msgs": ["Message 1", "Message 2", "Message 3"]
+						}'
+					}}
+					{{> alert this }}
+					{{/getJsonContext}}
+
+					{{> alert class="alert--info" copy="Infotext" }}
+					{{> alert class="alert--success" copy="Success" }}
+					{{> alert class="alert--error" copy="Error" }}
+				</div>
+
+				<div data-role="sg" data-type="sg__component" data-name="Buttons">
+					<h4 class="sg__hl sg__hl--subline">Button defaults</h4>
+
+					{{> buttons type="button" text="Button" }}
+					{{> buttons type="anker" text="Anker Button" url="/test" }}
+					{{> buttons type="input" text="Input Button" inputType="submit" }}
+					{{> buttons type="button" text="Button disabled" disabled=true }}
+
+					<h4 class="sg__hl sg__hl--subline">Button Variants</h4>
+					{{> buttons type="button" text=".btn--block" class="btn--block" }}
+
+					<h4 class="sg__hl sg__hl--subline">Button Styles</h4>
+					{{> buttons type="button" text=".btn--primary" class="btn--primary" }}
+					{{> buttons type="button" text=".btn--secondary" class="btn--secondary" }}
+					{{> buttons type="button" text=".btn--ghost" class="btn--ghost" }}
+					{{> buttons type="button" text=".btn--cta" class="btn--cta" }}
+
+					<h4 class="sg__hl sg__hl--subline">Button Group alignments</h4>
+					{{> buttons group-start=true }}
+					{{> buttons type="button" text="Button" }}
+					{{> buttons type="button" text="Button" }}
+					{{> buttons group-end=true }}
+
+					{{> buttons group-start=true class="btn-group--centered" }}
+					{{> buttons type="button" text="Button" }}
+					{{> buttons type="button" text="Button" }}
+					{{> buttons group-end=true }}
+
+					{{> buttons group-start=true class="btn-group--right" }}
+					{{> buttons type="button" text="Button" }}
+					{{> buttons type="button" text="Button" }}
+					{{> buttons group-end=true }}
+
+					{{> buttons group-start=true class="btn-group--inline" }}
+					{{> buttons type="button" text="Button" class="util-left" }}
+					{{> buttons type="button" text="Button" class="util-right" }}
+					{{> buttons group-end=true }}
+				</div>
+
+				<div data-role="sg" data-type="sg__component" data-name="Forms">
+					{{> forms }}
+				</div>
+
+				<!-- <@newComponent@> -->
+
+			</div>
+		</main>
+
+	{{/inline}}
+
+{{/base}}

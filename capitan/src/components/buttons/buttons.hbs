@@ -1,0 +1,26 @@
+{{!--
+ Capitan buttons v2.0.0
+
+ Copyright brandung GmbH & Co.KG
+ http://www.brandung.de/
+
+ Date: 2016-12-23
+ MIT License (MIT)
+--}}
+{{~#if group-start}}
+<div class="btn-group {{class}}">
+{{~/if~}}
+
+{{~#ifCond type '==' 'button'}}
+<button class="btn {{class}}" {{#if disabled}}disabled="disabled"{{/if}}>{{text}}</button>
+{{~/ifCond~}}
+
+{{~#ifCond type '==' 'anker'}}
+<a href="{{#if url}}{{url}}{{else}}#{{/if}}" class="btn {{class}}" title="{{text}}">{{text}}</a>
+{{~/ifCond~}}
+
+{{~#ifCond type '==' 'input'}}
+<input type="{{#if inputType}}{{inputType}}{{else}}button{{/if}}" class="btn {{class}}" value="{{text}}" {{#if disabled}}disabled="disabled"{{/if}} />
+{{~/ifCond~}}
+
+{{~#if group-end}}</div>{{/if}}
