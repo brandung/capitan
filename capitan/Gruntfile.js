@@ -100,6 +100,7 @@ module.exports = function (grunt) {
 		'sass',
 		'postcss:CSS',
 		'sassToHtml',
+		'cap-buildIndex',
 		'compile-handlebars',
 		'copy:privateUtilToPublicFolder',
 		'copy:privateHandlerToPublicFolder',
@@ -117,7 +118,7 @@ module.exports = function (grunt) {
 	 * and copy the assets into the given folder structure.
 	 */
 	grunt.registerTask('project:init', 'Start the initializing process', [
-		'capitan:intro',
+		'cap-msg:intro',
 		'prompt:init',
 		'replace:init',
 		'confReady',
@@ -140,7 +141,7 @@ module.exports = function (grunt) {
 	 * The 'project:serve' task for developing
 	 */
 	grunt.registerTask('project:serve', 'Start the developing task', [
-		'capitan:intro',
+		'cap-msg:intro',
 		'default',
 		'browserSync',
 		'watch'
@@ -151,7 +152,7 @@ module.exports = function (grunt) {
 	 * The 'project:lint' task for validating private files
 	 */
 	grunt.registerTask('project:lint', 'Lint your public JS and private SASS and HTML files', [
-		'capitan:intro',
+		'cap-msg:intro',
 		'postcss:SASS',
 		'htmlhintplus',
 		'eslint'
@@ -162,7 +163,7 @@ module.exports = function (grunt) {
 	 * The 'project:finish' task prepares files for deployment
 	 */
 	grunt.registerTask('project:finish', 'Minify and concatenate files for live environment', [
-		'capitan:intro',
+		'cap-msg:intro',
 		'default',
 		'sub:finish',
 		'notify:finish'
@@ -173,7 +174,7 @@ module.exports = function (grunt) {
 	 * The 'project:export' task prepare your project for a standalone version
 	 */
 	grunt.registerTask('project:export', 'Export project for a standalone version', [
-		'capitan:intro',
+		'cap-msg:intro',
 		'default',
 		'sub:finish',
 		'sub:zip',
@@ -185,7 +186,7 @@ module.exports = function (grunt) {
 	 * ZIP the project
 	 */
 	grunt.registerTask('create:zip', 'Create a standalone version and zip it', [
-		'capitan:intro',
+		'cap-msg:intro',
 		'sub:zip',
 		'zip',
 		'clean:zipFolder'

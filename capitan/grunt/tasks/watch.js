@@ -38,6 +38,7 @@ module.exports = {
 			'<%= Config.PRIVATE_DIR %>/components/**/*.hbs'
 		],
 		tasks: [
+			'cap-buildIndex',
 			'compile-handlebars'
 		]
 	}

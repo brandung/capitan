@@ -109,7 +109,7 @@ Helpers.getFiles = function (dir, files_) {
 		if (files.hasOwnProperty(i)) {
 			var name = dir + '/' + files[i];
 			if (fs.statSync(name).isDirectory()) {
-				getFiles(name, files_);
+				Helpers.getFiles(name, files_);
 			} else {
 				files_.push(name);
 			}
@@ -117,6 +117,37 @@ Helpers.getFiles = function (dir, files_) {
 	}
 	return files_;
 };
+
+
+/**
+ * Get all files in a specific folder
+ * with a specific suffix
+ *
+ * @param startPath
+ * @param filter
+ * @param files_
+ * @returns {*|Array}
+ */
+Helpers.getFilesByFilter = function (startPath, filter, files_) {
+	var fs = require('fs'),
+		files = fs.readdirSync(startPath);
+
+	files_ = files_ || [];
+
+	for (var i=0; i < files.length; i++) {
+		var filename=path.join(startPath,files[i]),
+			stat = fs.lstatSync(filename);
+
+		if (stat.isDirectory()) {
+			Helpers.getFilesByFilter(filename, filter, files_); //recurse
+		} else if (filename.indexOf(filter) >= 0) {
+			files_.push(filename);
+		}
+	}
+
+	return files_;
+};
+
 
 /**
  * Split suffix from filename
