@@ -26,7 +26,7 @@ $body-font-size-px: 16;
 $body-font-size: percentage(($body-font-size-px / $base-em) * 100 / 100); // in percent
 
 /* Font Style */
-$ff-regular: 'Helvetica', Arial, sans-serif !default;
+$ff-regular: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !default;
 $ff-icon: iconfont !default;
 
 
