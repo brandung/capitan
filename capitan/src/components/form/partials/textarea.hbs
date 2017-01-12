@@ -1,0 +1,16 @@
+{{!-- forms/partials/textarea.hbs --}}
+<div class="form__field-wrapper {{class}}">
+    <textarea
+            id="{{id}}"
+            title="{{label}}"
+            placeholder="{{placeholder}}"
+            {{#if disabled}}disabled{{/if}}
+            {{#if required}}required{{/if}}
+    ></textarea>
+    <label class="form__label" for="{{id}}">{{label}} {{#if required}}*{{/if}}</label>
+{{#if required}}
+	<div class="form__error">
+		<small class="is-error">{{error}}</small>
+	</div>
+{{/if}}
+</div>
