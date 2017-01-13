@@ -40,7 +40,7 @@
 
 		<div class="col-md-6">
 			<div class="row">
-				{{> textarea class="col-md-12" id="textarea" label="Textarea" placeholder="Placeholder Text" required=true error="Bitte Feld ausfüllen" }}
+				{{> textarea class="col-md-12" id="textarea" label="Textarea" placeholder="Placeholder Text" }}
 			</div>
 		</div>
 	</div>
@@ -49,13 +49,16 @@
 	<div class="row">
 		{{> input class="col-md-6" id="attr1" label="Input | [required]" placeholder="Placeholder Text" required=true error="Bitte Feld ausfüllen" }}
 		{{> input class="col-md-6" id="attr2" label="Input | [disabled]" placeholder="Placeholder Text" disabled=true }}
+		{{> input class="col-xs-6" id="attr3" label="Input | [checked]" type="checkbox" checked=true }}
 	</div>
 
 	<h4 class="sg__hl sg__hl--subline">Field Status Types</h4>
 	<div class="row">
 		{{> input class="col-md-6 is-error" id="status1" label="Input | .is-error" placeholder="Placeholder Text" required=true error="Bitte Feld ausfüllen" }}
 		{{> input class="col-md-6 is-valid" id="status2" label="Input | .is-valid" placeholder="Placeholder Text" required=true error="Bitte Feld ausfüllen" }}
-	</div>
+		{{> input class="col-md-6 is-error" id="status3" label="Input | .is-error" type="checkbox" placeholder="Placeholder Text" required=true error="Bitte Feld ausfüllen" }}
+		{{> input class="col-md-6 is-valid" id="status4" label="Input | .is-valid" type="checkbox" placeholder="Placeholder Text" required=true error="Bitte Feld ausfüllen" }}
+		</div>
 
 	{{/form-block}}
 </form>
