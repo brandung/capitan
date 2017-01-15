@@ -95,7 +95,7 @@ label {
 			border-color: $border-color-focus;
 		}
 
-		&.is-error {
+		&.is-invalid {
 			border-color: color('error');
 		}
 	}
@@ -194,7 +194,7 @@ label {
 		margin-top: $grid-gutter-width;
 	}
 
-	&.is-error {
+	&.is-invalid {
 
 		.#{$component}__label {
 			color: color('error');
@@ -215,6 +215,7 @@ label {
 
 		.#{$component}__error {
 			display: block;
+			color: color('error');
 		}
 	}
 
@@ -272,7 +273,7 @@ label {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 
-	.is-error {
+	.is-invalid {
 		color: color('error');
 	}
 
@@ -311,7 +312,7 @@ label {
 			margin-top: 0;
 		}
 
-		&.is-error {
+		&.is-invalid {
 
 			input:not([type='checkbox'], [type='radio']),
 			select,
