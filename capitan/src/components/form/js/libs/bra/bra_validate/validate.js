@@ -1,5 +1,5 @@
 /**
-* brandung validate Plugin v0.9.1
+* Capitan validate Plugin v0.9.1
 *
 * Copyright brandung GmbH & Co.KG
 * http://www.brandung.de/
@@ -420,6 +420,8 @@
 				}
 			}
 
+			console.log(groupedValidityStates);
+			
 			return groupedValidityStates;
 		},
 

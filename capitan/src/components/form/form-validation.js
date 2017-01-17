@@ -1,11 +1,11 @@
 
 /*
-* Capitan formValidation v0.9.0
+* Capitan formValidation v0.9.1
 *
-* Copyright Capitan GmbH & Co.KG
+* Copyright brandung GmbH & Co.KG
 * http://www.Capitan.de/
 *
-* Date: 2016-04-21
+* Date: 2017-01-14
 * MIT License (MIT)
 */
 
@@ -23,7 +23,8 @@ Capitan.Component.formValidation = function ($) {
 				pluginOptions: {
 					selectors: {},
 					classes: {},
-					callbacks: {}
+					callbacks: {},
+					errorMessages: {}
 				}
 			}
 		}
