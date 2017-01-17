@@ -1,0 +1,409 @@
+@charset "utf-8";
+
+/**
+ * Capitan forms.scss v2.0.0
+ *
+ * Copyright brandung GmbH & Co.KG
+ * http://www.brandung.de/
+ *
+ * Date: 2017-01-11
+ * MIT License (MIT)
+ */
+
+@import '../../sass/partials/functions';
+@import '../../sass/partials/variables';
+@import '../../sass/partials/mixins';
+
+/* ==========================================================================
+   Form Elements
+   ========================================================================== */
+
+$component: 'form';
+$bg-color: color('white');
+$border-color-focus: color('info');
+$input-height: 43px;
+
+// Global form styling
+input,
+textarea,
+select {
+	@include prefix(transition, all .2s);
+
+	&:focus {
+		outline: none;
+	}
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+	resize: none;
+}
+
+label {
+	cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: color('placeholder');
+}
+
+::-moz-placeholder {
+	color: color('placeholder');
+}
+
+:-ms-input-placeholder {
+	color: color('placeholder');
+}
+
+::-ms-clear {
+	display: none;
+}
+
+
+// block
+%#{$component} {
+	@include clearfix();
+
+	// input, select, textarea
+	input:not([type='checkbox'], [type='radio']),
+	select,
+	textarea {
+		@include prefix(border-radius, 0);
+		position: relative;
+		z-index: 1;
+		background: $bg-color;
+		padding: 12px $grid-gutter-width / 2 10px;
+		width: 100%;
+		border: solid 1px color('black');
+
+		&:hover,
+		&[readonly] {
+			cursor: pointer;
+		}
+
+		&[disabled] {
+			background: color('grey-lightest');
+			color: color('grey');
+			cursor: not-allowed;
+		}
+
+		&:focus {
+			@include prefix(box-shadow, 1);
+			outline: none;
+			color: color('black');
+			border-color: $border-color-focus;
+		}
+
+		&.is-invalid {
+			border-color: color('error');
+		}
+	}
+
+	input:not([type='checkbox'], [type='radio']) {
+		height: $input-height;
+	}
+
+	textarea {
+		min-height: 200px;
+	}
+
+	select {
+		height: $input-height;
+		line-height: $input-height;
+		padding: 0 $grid-gutter-width / 2;
+		color: color('placeholder');
+	}
+
+	// radios and checkboxes
+	input[type="radio"],
+	input[type="checkbox"] {
+		position: absolute;
+		left: -9999px;
+
+		+ label {
+			position: relative;
+			padding-left: 50px;
+			display: inline-block;
+			cursor: pointer;
+			margin: $grid-gutter-width/2 0;
+
+			&:hover,
+			.active {
+				&:before {
+					background: color('grey-lightest');
+					border-color: color('black');
+				}
+			}
+
+			&:before,
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				@include prefix(transition, all .1s ease-out);
+				@include prefix(box-sizing, border-box);
+			}
+
+			&:before {
+				width: 30px;
+				height: 30px;
+				top: -3px;
+				left: 0;
+				border: solid 1px color('black');
+				background: white;
+				text-align: center;
+			}
+
+			&:after {
+				width: 20px;
+				height: 20px;
+				top: 2px;
+				left: 5px;
+				background: color('grey');
+				@include prefix(transform, scale(0));
+			}
+		}
+	}
+
+	input[type="radio"] + label {
+		&:before,
+		&:after {
+			@include prefix(border-radius, 100%);
+		}
+	}
+
+	input[type="checkbox"]:checked,
+	input[type="radio"]:checked {
+		+ label:after {
+			@include prefix(transform, scale(1));
+		}
+	}
+}
+
+
+// element
+.#{$component}__field-wrapper {
+	position: relative;
+	margin-top: 0;
+	margin-bottom: $grid-gutter-width / 2;
+
+	input:not([type='checkbox'], [type='radio']),
+	select,
+	textarea {
+		margin-top: $grid-gutter-width;
+	}
+
+	&.is-invalid {
+
+		.#{$component}__label {
+			color: color('error');
+		}
+
+		input:not([type='checkbox'], [type='radio']),
+		select,
+		textarea {
+			border-color: color('error');
+		}
+
+		input[type='checkbox'],
+		input[type='radio'] {
+			+ .#{$component}__label:before {
+				border-color: color('error');
+			}
+		}
+
+		.#{$component}__error {
+			display: block;
+			color: color('error');
+		}
+	}
+
+	&.is-valid {
+
+		.#{$component}__label {
+			color: color('success');
+		}
+
+		input:not([type='checkbox'], [type='radio']),
+		select,
+		textarea {
+			border-color: color('success');
+		}
+
+		input[type='checkbox'],
+		input[type='radio'] {
+			+ .#{$component}__label {
+				color: color('black');
+
+				&:before {
+					border-color: color('success');
+				}
+			}
+		}
+	}
+}
+
+.#{$component}__label {
+
+	input:not([type='checkbox'], [type='radio']) + &,
+	select + &,
+	textarea + & {
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		text-align: left;
+		pointer-events: none;
+		max-width: calc(100% - 50px);
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+.#{$component}__error {
+	@include prefix(transition, 'transform 150ms ease');
+	display: none;
+	position: absolute;
+	z-index: 0;
+	bottom: -$input-height/2;
+	left: $grid-gutter-width-half;
+	right: $grid-gutter-width-half;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+
+	.is-invalid {
+		color: color('error');
+	}
+
+	input[type='checkbox'] ~ & ,
+	input[type='radio'] ~ & {
+		margin-left: 50px;
+		bottom: -10px;
+	}
+}
+
+
+// modifier
+.#{$component}--transition {
+
+	::-webkit-input-placeholder {
+		color: $bg-color;
+	}
+
+	::-moz-placeholder {
+		color: $bg-color;
+	}
+
+	:-ms-input-placeholder {
+		color: $bg-color;
+	}
+
+
+	.#{$component}__field-wrapper {
+
+		margin-top: $grid-gutter-width / 2;
+		margin-bottom: $grid-gutter-width;
+
+		input:not([type='checkbox'], [type='radio']),
+		select,
+		textarea {
+			margin-top: 0;
+		}
+
+		&.is-invalid {
+
+			input:not([type='checkbox'], [type='radio']),
+			select,
+			textarea {
+
+				+ .#{$component}__label {
+					@include prefix(transform, 'translate(0,-24px)');
+					color: color('error');
+				}
+			}
+
+			.#{$component}__error {
+				@include prefix(transform, 'translate(0, 21px)');
+			}
+
+			input[type='checkbox'] ,
+			input[type='radio'] {
+
+				~ .#{$component}__error {
+					display: block;
+					@include prefix(transform, 'translate(0, 0)');
+				}
+			}
+		}
+
+		&.is-valid {
+
+			input:not([type='checkbox'], [type='radio']),
+			select,
+			textarea {
+
+				+ .#{$component}__label {
+					@include prefix(transform, 'translate(0,-24px)');
+					color: color('success');
+				}
+			}
+		}
+	}
+
+	input:not([type='checkbox'], [type='radio']),
+	select,
+	textarea {
+
+		+ .#{$component}__label {
+			@include prefix(transition, 'transform 150ms ease');
+			padding: 0 2px;
+			top: 10px;
+			left: 29px;
+			background: $bg-color;
+			color: color('placeholder');
+		}
+
+		&[disabled] {
+
+			+ .#{$component}__label {
+				background: color('grey-lightest');
+				color: color('grey');
+			}
+		}
+
+		&:focus {
+
+			+ .#{$component}__label {
+				@include prefix(transform, 'translate(0,-24px)');
+				color: $border-color-focus;
+			}
+		}
+	}
+
+	select {
+
+		+ .#{$component}__label {
+			@include prefix(transform, 'translate(0,-24px)');
+		}
+	}
+
+	input[type='checkbox'] ,
+	input[type='radio'] {
+
+		~ .#{$component}__error {
+			display: none;
+		}
+	}
+
+	.#{$component}__error {
+		display: block;
+		bottom: 0;
+	}
+}
+
+// component class selector
+.#{$component} {
+	@extend %#{$component};
+}

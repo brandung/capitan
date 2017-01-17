@@ -1,0 +1,70 @@
+{{!--
+ Capitan forms v2.0.0
+
+ Copyright brandung GmbH & Co.KG
+ http://www.brandung.de/
+
+ Date: 2017-01-11
+ MIT License (MIT)
+--}}
+
+<form class="form {{class}}"
+		method="{{#if method}}{{method}}{{else}}get{{/if}}"
+		action="{{#if action}}{{action}}{{else}}/{{/if}}"
+		{{#if validate}}data-validate="true"{{/if}}
+>
+
+	{{#> form-block}}
+    <h4 class="sg__hl sg__hl--subline">Form Fields</h4>
+    <div class="row">
+        {{> input class="col-md-6" id="text" label="Input | text " placeholder="Placeholder Text" }}
+        {{> input class="col-md-6" id="date" label="Input | date" type="date" placeholder="Placeholder Text" }}
+        {{> input class="col-md-6" id="email" label="Input | email" type="email" placeholder="Placeholder Text" }}
+        {{> input class="col-md-6" id="password" label="Input | password" type="password" placeholder="Placeholder Text" }}
+        {{> input class="col-md-6" id="number" label="Input | number" type="number" placeholder="Placeholder Text" }}
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				{{#getJsonContext
+						'{
+							"options": [
+								{"text": "Bitte wählen", "selected": true},
+								{"value": "0", "text": "Option 1"},
+								{"value": "1", "text": "Option 2"}
+							]
+						}'
+				}}
+					{{> select this class="col-md-12" id="select" label="Select" }}
+				{{/getJsonContext}}
+
+				{{> input class="col-md-12" id="checkbox1" label="Input | checkbox" type="checkbox" }}
+				{{> input class="col-xs-6" id="radio1" name="radiofield" label="Input | radio" type="radio" }}
+				{{> input class="col-xs-6" id="radio2" name="radiofield" label="Input | radio" type="radio" }}
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="row">
+				{{> textarea class="col-md-12" id="textarea" label="Textarea" placeholder="Placeholder Text" }}
+			</div>
+		</div>
+	</div>
+
+	<h4 class="sg__hl sg__hl--subline">Field Attributes</h4>
+	<div class="row">
+		{{> input class="col-md-6" id="attr1" label="Input | [required]" placeholder="Placeholder Text" required=true errorMsg="Bitte Feld ausfüllen" }}
+		{{> input class="col-md-6" id="attr2" label="Input | [disabled]" placeholder="Placeholder Text" disabled=true }}
+		{{> input class="col-md-6" id="attr3" label="Input | [pattern]" placeholder="Placeholder Text" pattern="[A-Za-z]{3}" required=true }}
+		{{> input class="col-xs-6" id="attr4" label="Input | [checked]" type="checkbox" checked=true }}
+	</div>
+
+	<h4 class="sg__hl sg__hl--subline">Field Status Types</h4>
+	<div class="row">
+		{{> input class="col-md-6 is-invalid" id="status1" label="Input | .is-invalid" placeholder="Placeholder Text" required=true }}
+		{{> input class="col-md-6 is-valid" id="status2" label="Input | .is-valid" placeholder="Placeholder Text" required=true }}
+		{{> input class="col-md-6 is-invalid" id="status3" label="Input | .is-invalid" type="checkbox" placeholder="Placeholder Text" required=true }}
+		{{> input class="col-md-6 is-valid" id="status4" label="Input | .is-valid" type="checkbox" placeholder="Placeholder Text" required=true }}
+		</div>
+	{{/form-block}}
+</form>

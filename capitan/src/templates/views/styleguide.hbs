@@ -53,44 +53,44 @@
 				<div data-role="sg" data-type="sg__component" data-name="Buttons">
 					<h4 class="sg__hl sg__hl--subline">Button defaults</h4>
 
-					{{> buttons type="button" text="Button" }}
-					{{> buttons type="anker" text="Anker Button" url="/test" }}
-					{{> buttons type="input" text="Input Button" inputType="submit" }}
-					{{> buttons type="button" text="Button disabled" disabled=true }}
+					{{> button type="button" text="Button" }}
+					{{> button type="anker" text="Anker Button" url="/test" }}
+					{{> button type="input" text="Input Button" inputType="submit" }}
+					{{> button type="button" text="Button disabled" disabled=true }}
 
 					<h4 class="sg__hl sg__hl--subline">Button Variants</h4>
-					{{> buttons type="button" text=".btn--block" class="btn--block" }}
+					{{> button type="button" text=".btn--block" class="btn--block" }}
 
 					<h4 class="sg__hl sg__hl--subline">Button Styles</h4>
-					{{> buttons type="button" text=".btn--primary" class="btn--primary" }}
-					{{> buttons type="button" text=".btn--secondary" class="btn--secondary" }}
-					{{> buttons type="button" text=".btn--ghost" class="btn--ghost" }}
-					{{> buttons type="button" text=".btn--cta" class="btn--cta" }}
+					{{> button type="button" text=".btn--primary" class="btn--primary" }}
+					{{> button type="button" text=".btn--secondary" class="btn--secondary" }}
+					{{> button type="button" text=".btn--ghost" class="btn--ghost" }}
+					{{> button type="button" text=".btn--cta" class="btn--cta" }}
 
 					<h4 class="sg__hl sg__hl--subline">Button Group alignments</h4>
-					{{> buttons group-start=true }}
-					{{> buttons type="button" text="Button" }}
-					{{> buttons type="button" text="Button" }}
-					{{> buttons group-end=true }}
+					{{> button group-start=true }}
+					{{> button type="button" text="Button" }}
+					{{> button type="button" text="Button" }}
+					{{> button group-end=true }}
 
-					{{> buttons group-start=true class="btn-group--centered" }}
-					{{> buttons type="button" text="Button" }}
-					{{> buttons type="button" text="Button" }}
-					{{> buttons group-end=true }}
+					{{> button group-start=true class="btn-group--centered" }}
+					{{> button type="button" text="Button" }}
+					{{> button type="button" text="Button" }}
+					{{> button group-end=true }}
 
-					{{> buttons group-start=true class="btn-group--right" }}
-					{{> buttons type="button" text="Button" }}
-					{{> buttons type="button" text="Button" }}
-					{{> buttons group-end=true }}
+					{{> button group-start=true class="btn-group--right" }}
+					{{> button type="button" text="Button" }}
+					{{> button type="button" text="Button" }}
+					{{> button group-end=true }}
 
-					{{> buttons group-start=true class="btn-group--inline" }}
-					{{> buttons type="button" text="Button" class="util-left" }}
-					{{> buttons type="button" text="Button" class="util-right" }}
-					{{> buttons group-end=true }}
+					{{> button group-start=true class="btn-group--inline" }}
+					{{> button type="button" text="Button" class="util-left" }}
+					{{> button type="button" text="Button" class="util-right" }}
+					{{> button group-end=true }}
 				</div>
 
 				<div data-role="sg" data-type="sg__component" data-name="Forms">
-					{{> forms }}
+                    {{> form class="form--transition" }}
 				</div>
 
 				<!-- <@newComponent@> -->

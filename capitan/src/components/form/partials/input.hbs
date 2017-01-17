@@ -1,0 +1,16 @@
+{{!-- forms/partials/input.hbs --}}
+<div class="form__field-wrapper {{class}}">
+    <input type="{{#if type}}{{type}}{{else}}text{{/if}}"
+           id="{{id}}"
+           name="{{name}}"
+           value="{{value}}"
+           title="{{label}}"
+           placeholder="{{placeholder}}"
+           {{#if disabled}}disabled{{/if}}
+		   {{#if checked}}checked{{/if}}
+		   {{#if required}}required{{/if}}
+		   {{#if pattern}}pattern="{{pattern}}" {{/if}}
+		   {{#if errorMsg}}data-error-message="{{errorMsg}}" {{/if}}
+    />
+    <label class="form__label" for="{{id}}">{{label}} {{#if required}}*{{/if}}</label>
+</div>

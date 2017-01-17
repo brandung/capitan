@@ -1,0 +1,21 @@
+{{!-- forms/partials/select.hbs --}}
+<div class="form__field-wrapper {{class}}">
+    <select
+            id="{{id}}"
+            name="{{name}}"
+			title="{{label}}"
+            {{#if disabled}}disabled{{/if}}
+            {{#if required}}required{{/if}}
+			{{#if errorMsg}}data-error-message="{{errorMsg}}" {{/if}}
+    >
+        {{#each options}}
+        <option
+                value="{{this.value}}"
+                {{#if this.selected}}selected{{/if}}
+        >
+            {{this.text}}
+        </option>
+        {{/each}}
+    </select>
+    <label class="form__label" for="{{id}}">{{label}} {{#if required}}*{{/if}}</label>
+</div>

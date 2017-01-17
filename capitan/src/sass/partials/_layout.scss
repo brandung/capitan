@@ -20,7 +20,7 @@
 }
 
 body {
-    @include font();
+	@include font();
 	background: color('white');
 	color: color('black');
 	font-size: $body-font-size;
