@@ -66,7 +66,6 @@ basket.require(
 		// store commonly used jQuery objects to Vars object
 		Capitan.Vars = $.extend(Capitan.Vars, {
 			$html: $('html'),
-			$body: $('body'),
 			$window: $(window),
 			$doc: $(document)
 		});
@@ -95,6 +94,11 @@ basket.require(
 							method: function () {
 								// load components when DOM is ready
 								$(function(){
+									// store body object to Vars object
+									Capitan.Vars = $.extend(Capitan.Vars, {
+										$body: $('body')
+									});
+									// load components
 									Capitan.Util.loadComponents();
 								})
 							}
@@ -124,16 +128,26 @@ basket.require(
 					unique: '<@unique@>'
 				},
 				{
-					condition: $('form'),
+					condition: $('.form'),
 					fetch: [
-						Capitan.Vars.folderPath + 'components/forms/forms.css'
+						Capitan.Vars.folderPath + 'components/form/form.css'
+					],
+					unique: '<@unique@>'
+				},
+				{
+					condition: $('.form[data-validate="true"]'),
+					fetch: [
+						// <@bundle#form-validation
+						Capitan.Vars.folderPath + 'js/libs/bra/bra_validate/validate.js',
+						Capitan.Vars.folderPath + 'components/form/form-validation.js'
+						// bundle@>
 					],
 					unique: '<@unique@>'
 				},
 				{
 					condition: $('.btn'),
 					fetch: [
-						Capitan.Vars.folderPath + 'components/buttons/buttons.css'
+						Capitan.Vars.folderPath + 'components/button/button.css'
 					],
 					unique: '<@unique@>'
 				}// <@newComponent@>
@@ -142,7 +156,7 @@ basket.require(
 
 		// load before-render bundle before DOM ready
 		Capitan.Util.fetchBeforeRender();
-		
+
 	})(jQuery);
 }, function () {
 	'use strict';
