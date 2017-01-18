@@ -18,7 +18,7 @@ Frontend Stack:
 * nodejs
 * Grunt
 * Vanilla JS
-* swig or handlebars.js (Template-Engine)
+* handlebars.js (Template-Engine)
 * basket.js (Store files in localstorage)
 * importer.js (Load components on demand)
 * AngularJS
@@ -34,15 +34,16 @@ Frontend Stack:
 
 ## Installation
 
-1. Copy repository from https://github.com/brandung/capitan to your local folder
-2. run ```npm install```
+1. Checkout repository from https://github.com/brandung/capitan to your local folder
+2. Navigate to the folder 'capitan/' and run ```npm install```
 
 ## Start a new project
 
 1. For first initialization of your project type: **```grunt project:init```**
-2. Choose your destination system (standardized structure with "src" and "dist" folders is the default system)
-3. Browsersync opens up the components page ([styleguide](#styleguide))
-4. Start your work
+2. Choose your destination system (standardized structure with "dist" folders is the default system)
+3. Path to your Public folders will be set automatically, based on the information set in the choosen system JSON file
+4. Browsersync opens up the components page ([styleguide](#styleguide))
+5. Start your work
 
 ## Start working on an existing project
 
@@ -59,13 +60,14 @@ Task | Description
 grunt project:init | Initialize project
 grunt project:serve | Task for your daily work (after initialisation)
 grunt project:finish | Uglify and concatenate your private assets
-grunt create:component --name=[COMPNAME] | Create new component
-grunt create:zip | Zip your application
-grunt create:styleguide | Reads the variables from the Sass Variables-Partial and transports them into the template partials that are part of the components page
 grunt project:lint | Lint your html, sass and private js files
-grunt update:grunt | <p>Donwloads the latest workflow files from github and copies them into the corresponding folders. Excluding the following folders:</p><ul><li>hbp</li><li>.gitignore</li><li>LICENSE</li><li>README.md</li><li>grunt/*.js</li><li>grunt/systems"</li></ul>
+grunt project:export | Do the finish task and export your files for presentation
+grunt create:component --name=[COMPNAME] | Create new component
+grunt create:zip | Do the same as Project:export and ZIP your applikation
+grunt create:styleguide | Reads the variables from the Sass Variables-Partial and transports them into the template partials that are part of the components page
+grunt update:grunt | Donwloads the latest workflow files from github and copies them into the corresponding folders. Excluding the following folders:</p><ul><li>capitan/src</li><li>.gitignore</li><li>capitan/grunt/*.js</li><li>capitan/grunt/systems"</li></ul>
 
-# Folder structure
+# Folder structure within 'capitan/src/'
 
 Folder name | Description
 ------------ | -------------
@@ -76,13 +78,13 @@ templates | Global template files
 
 ## *component*
 
-All your components will be placed here. Components are **self-contained**, meaning that the component folder contains everything the component needs to be displayed correctly.
+All your components will be placed here. Components are **self-contained**, meaning that the component folder contains everything the component needs to be displayed and worked correctly.
 
-When you run the create component task a folder with the name you specified will be created inside the component folder. The created folder will look like this:  
+When you run the create component task a folder with the name you specified will be created inside the components folder. The created folder will look like this:  
 
 ```
 [COMPNAME]
-├──[COMPNAME].tpl 
+├──[COMPNAME].hbs 
 ├──[COMPNAME].scss
 ```
 
@@ -92,7 +94,7 @@ A more complex component including JS and 3rd party files can look like this:
 
 ```
 [COMPNAME]
-├──[COMPNAME].tpl 
+├──[COMPNAME].hbs 
 ├──[COMPNAME].scss
 ├──[COMPNAME].js
 ├──js
@@ -158,16 +160,21 @@ main.scss
 ## *templates*
 
 ```
-tpl
-├──partials
-├──modules.tpl
-
-_modules.html
+partials
+├──includes
+|  ├──...
+├──layouts
+|  ├──base.hbs
+views
+   ├──index.hbs
+   ├──styleguide.hbs
 ```
 
 # <a name="styleguide">Styleguide</a>
 
 Capitan generates a styleguide for you. Colors, breakpoints and icons that are defined in the Sass Variables-Partial (sass/partials/_variables.scss) will be generated into your styleguide.
+
+Also all of your components will be included into the styleguide.hbs automatically (if you use the task ```grunt create:component --name=[COMPNAME]```).
 
 This process is part of the ```grunt project:init``` and ```grunt project:serve``` tasks. It reads the variables and transports them into the template partials that are part of the components page. While running the ```grunt project:serve``` task, your styleguide will automatically be updated if changes are made.
 
@@ -194,8 +201,8 @@ Capitan.Util.loadComponents = function () {
             condition: true,
             order: 0,
             fetch: [
-                [PUBLIC-PATH] + 'components/[COMPONENT-NAME]/component.js',
-                [PUBLIC-PATH] + 'components/[COMPONENT-NAME]/component.css'
+                [PUBLIC-FOLDER-PATH] + 'components/[COMPONENT-NAME]/component.js',
+                [PUBLIC-FOLDER-PATH] + 'components/[COMPONENT-NAME]/component.css'
             ],
             callback: [
                 {
@@ -244,7 +251,7 @@ Capitan.Vars.folderPath + 'js/handle/resize-handler.js'
 
 In this example the bundle file will be placed under
 ```
-[PUBLIC]
+[PUBLIC Folder]
 ├──js
 ├────bundle
 ├──────before-render-bundle.js
@@ -282,7 +289,9 @@ Functions, Utils and Handles are the first scripts loaded by the Importer in the
  * **Handles:** They handle global events like window resize or scroll events inside the document 
 
 # Annotations
-The following annotation can be used as a marker or to run additional actions within a task.
+The following annotation are used as a marker for additional actions within a task.
+
+**IMPORTANT:** Never delete one of these annotations.
 
 Annotation | File type | Connected task | Description
 ------------ | ------------- | ------------ | -------------
@@ -292,7 +301,7 @@ Annotation | File type | Connected task | Description
 <@newComponent@> | tpl<br>js | grunt create:component | marker to insert new component into global.js and _modules.tpl
 
 # Systems
-For every system like Wordpress or Magento a custom JSON-file can be applied. All systems are located in the **grunt/systems/** folder. The default, TYPO3 and ZEND system are already part of the capitan workflow.
+For every system like Wordpress or Magento a custom JSON-file can be applied. All systems are located in the **capitan/grunt/systems/** folder. The default, TYPO3 and ZEND system are already part of the capitan workflow.
 
 ## Add a new system
 If you want to add your own system file you can take one of the existing systems as a starting point.
@@ -300,23 +309,26 @@ If you want to add your own system file you can take one of the existing systems
 ```
 {
     "folder": [
-        "src/private/frontend",
-        "src/public/component",
-        "src/public/css",
-        "src/public/fonts",
-        "src/public/img/",
-        "src/public/js/libs/bra",
-        "src/public/js/libs/vendor"
+        "../dist/components",
+        "../dist/css",
+        "../dist/fonts",
+        "../dist/img/",
+        "../dist/js/libs/bra",
+        "../dist/js/libs/vendor"
     ],
-    "private": "src/private/frontend",
-    "public": "src/public",
+	  "root": "..",
+    "private": "src",
+    "public": "dist",
     "liveURL": "",
-    "route": {}
+    "route": {
+      "/dist": "../dist"
+    }
 }
 ```
 
 ### System folders
-Inside the folder array you can specify the folders that should be created when running the init task.
+Inside the folder array you can specify the public folders that should be created when running the init task. It is important that the default folders always be there. Additional folder can be added individual.
+The folder path is *relative* to your 'capitan' folder!
 
 ```
 {
@@ -324,12 +336,21 @@ Inside the folder array you can specify the folders that should be created when 
 }
 ```
 
-### Private folder
-The folder where your private files should be placed. The init task will copy the default workflow files and folders here. 
+### root path
+Set the root path. The root path is *relative* to your 'capitan' folder (without trailing slash)!
 
 ```
 {
-    "private": ""
+    "root": ".."
+}
+```
+
+### Private folder
+The folder where your private assets are placed. These should not be edited. 
+
+```
+{
+    "private": "src"
 }
 ```
 
@@ -352,7 +373,7 @@ Here you can set the project path for the live server.
 ```
 
 ### Route
-If your live server paths differ from your local project paths, you can set routes to map those paths correctly.
+If your live server paths differ from your local project paths, you can set routes to map those paths correctly (see an example in the typo3.json).
 
 ```
 {
@@ -361,3 +382,5 @@ If your live server paths differ from your local project paths, you can set rout
     }
 }
 ```
+
+**More documentation will follow...**
