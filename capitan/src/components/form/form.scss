@@ -34,12 +34,6 @@ select {
 	}
 }
 
-input,
-textarea {
-	-webkit-appearance: none;
-	resize: none;
-}
-
 label {
 	cursor: pointer;
 }
@@ -64,6 +58,12 @@ label {
 // block
 %#{$component} {
 	@include clearfix();
+	
+	input,
+	textarea {
+		-webkit-appearance: none;
+		resize: none;
+	}
 
 	// input, select, textarea
 	input:not([type='checkbox'], [type='radio']),
