@@ -11,7 +11,7 @@ var grunt = require('grunt');
 module.exports = {
 	bsFiles: {
 		src: [
-			'<%= Config.PRIVATE_DIR %>/templates/styleguide.html',
+			'<%= Config.VIEWS_DIR %>/styleguide.html',
 			'<%= Config.PUBLIC_ASSETS %>/js/main.js'
 		]
 	},
@@ -22,7 +22,7 @@ module.exports = {
 		injectChanges: false,
 		reloadDelay: 1000,
 		server: {
-			baseDir: '<%= Config.CWD %>/<%= Config.PRIVATE_DIR %>/templates/',
+			baseDir: '<%= Config.CWD %>/<%= Config.VIEWS_DIR %>/',
 			index: 'styleguide.html',
 			routes: '<%= Config.syncRoutes %>'
 		},

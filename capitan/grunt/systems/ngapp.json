@@ -13,6 +13,7 @@
     "public": "/dist",
 	"app": "/app",
 	"assets": "/assets",
+    "views": "../dist",
     "liveURL": "",
     "route": {
       "/assets": "../dist/assets",

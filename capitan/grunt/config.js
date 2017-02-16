@@ -20,10 +20,6 @@ Config.SYSTEM = '%%system%%';
 Config.systemPaths =  grunt.file.readJSON('./grunt/systems/' + Config.SYSTEM + '.json');
 // Folder structure of the given system
 Config.folderArr = Config.systemPaths.folder;
-// The `src` folder contains all production assets, like js, scss und tpl files
-Config.srcFolderName = 'src';
-// Into the `build` folder our build process will copy the dev assets
-Config.buildFolderName = 'build';
 // Get project name from package.json
 Config.PKG_NAME = require('../package.json')['name'];
 // Get user profile name (OSX/Windows)
@@ -37,6 +33,7 @@ Config.CWD = path.resolve(process.cwd(), '');
 // Route object for the browserSync
 Config.syncRoutes = Config.systemPaths.route;
 
+
 /**
  * Define our global directory paths
  */
@@ -45,24 +42,12 @@ Config.PRIVATE_DIR = Config.systemPaths.private;
 Config.PUBLIC_DIR = Config.ROOT_DIR + Config.systemPaths.public;
 Config.PUBLIC_APP = Config.PUBLIC_DIR + Config.systemPaths.app;
 Config.PUBLIC_ASSETS = Config.PUBLIC_DIR + Config.systemPaths.assets;
+Config.VIEWS_DIR = Config.systemPaths.views;
 Config.LIVE_URL = Config.systemPaths.liveURL + Config.systemPaths.assets;
-Config.SRC_DIR = Config.PRIVATE_DIR + '/' + Config.srcFolderName;
-Config.BUILD_DIR = Config.PRIVATE_DIR + '/' + Config.buildFolderName;
+Config.SRC_DIR = Config.PRIVATE_DIR + '/';
 Config.ZIP_PUBLIC_FOLDER = '_' + Config.PKG_NAME + '_';
 Config.PRIVATE_JS_VENDOR = Config.PRIVATE_DIR + '/js/libs/vendor';
 
-
-/**
- * This is a collection of file patterns that refer to our app code (the
- * stuff in `src/`). These file paths are used in the configuration of
- * build tasks.
- *
- * @type {{js: *[], scss: *[]}}
- */
-Config.app_files = {
-	js: [Config.SRC_DIR + '/**/*.js'],
-	scss: [Config.SRC_DIR +'/**/*.scss']
-};
 
 /**
  * Define our default required JS files.

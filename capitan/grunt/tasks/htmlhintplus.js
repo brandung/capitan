@@ -9,8 +9,8 @@ module.exports = {
 	},
 	files: {
 		src: [
-			'<%= Config.PRIVATE_DIR %>/templates/*.html',
-			'!<%= Config.PRIVATE_DIR %>/templates/styleguide.html'
+			'<%= Config.VIEWS_DIR %>/*.html',
+			'!<%= Config.VIEWS_DIR %>/styleguide.html'
 		]
 	}
 };

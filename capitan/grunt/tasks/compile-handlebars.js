@@ -9,7 +9,7 @@ module.exports = {
          expand: true,
          cwd: '<%= Config.PRIVATE_DIR %>/templates/views',
          src: '**/*.hbs',
-         dest: '<%= Config.PRIVATE_DIR %>/templates/',
+         dest: '<%= Config.VIEWS_DIR %>',
          ext: '.html'
      }],
 	 helpers: './grunt/hbs-helpers.js',

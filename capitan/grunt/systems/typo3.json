@@ -12,6 +12,7 @@
     "public": "/Resources/Public",
     "app": "",
     "assets": "",
+    "views": "src/templates",
     "liveURL": "/typo3conf/ext/%%repo%%/Resources/Public",
     "route": {
         "/Resources": "../Resources",

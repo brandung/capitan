@@ -12,6 +12,7 @@
     "public": "/public",
     "app": "",
     "assets": "",
+    "views": "src/templates",
     "liveURL": "",
     "route": {
       "/": "../public/"
