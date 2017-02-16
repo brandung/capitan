@@ -23,6 +23,8 @@ var Capitan = function (out) {
 	Vars: {
 		// path to assets folder
 		folderPath: '%%public%%/',
+		// path to component folder
+		folderPathToComponents: '%%publicComponents%%/components/',
 		// standard breakpoints
 		breakpoints: {},
 		// mobile first (xs, sm, md, lg, xl)
@@ -123,14 +125,14 @@ basket.require(
 				{
 					condition: $('.alert'),
 					fetch: [
-						Capitan.Vars.folderPath + 'components/alert/alert.css'
+						Capitan.Vars.folderPathToComponents + 'alert/alert.css'
 					],
 					unique: '<@unique@>'
 				},
 				{
 					condition: $('.form'),
 					fetch: [
-						Capitan.Vars.folderPath + 'components/form/form.css'
+						Capitan.Vars.folderPathToComponents + 'form/form.css'
 					],
 					unique: '<@unique@>'
 				},
@@ -139,7 +141,7 @@ basket.require(
 					fetch: [
 						// <@bundle#form-validation
 						Capitan.Vars.folderPath + 'js/libs/bra/bra_validate/validate.js',
-						Capitan.Vars.folderPath + 'components/form/form-validation.js'
+						Capitan.Vars.folderPathToComponents + 'form/form-validation.js'
 						// bundle@>
 					],
 					unique: '<@unique@>'
@@ -147,7 +149,7 @@ basket.require(
 				{
 					condition: $('.btn'),
 					fetch: [
-						Capitan.Vars.folderPath + 'components/button/button.css'
+						Capitan.Vars.folderPathToComponents + 'button/button.css'
 					],
 					unique: '<@unique@>'
 				}// <@newComponent@>

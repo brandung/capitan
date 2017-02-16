@@ -5,7 +5,7 @@
  */
 module.exports = function(grunt) {
 	grunt.registerTask('assetBundle', '', function (n) {
-		var mainJS = grunt.file.read(grunt.config('Config.PUBLIC_DIR') + '/js/main.js'),
+		var mainJS = grunt.file.read(grunt.config('Config.PUBLIC_ASSETS') + '/js/main.js'),
 			bundleRegex = /\/\/\s?<@bundle*(\S*)(\n|\r|.)*?\/\/\s?bundle@>/igm,
 			bundleBlocks = mainJS.match(bundleRegex),
 			block,
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 				mainJSAssetPath = assets[asset].replace(/(\'|")/g, '');
 
 				if(!/\/\//.test(mainJSAssetPath)) {
-					mainJSAssetPath = mainJSAssetPath.replace(/(Capitan\.Vars\.folderPath(\s)*\+(\s)*)/g, grunt.config('Config.PUBLIC_DIR') + '/');
+					mainJSAssetPath = mainJSAssetPath.replace(/(Capitan\.Vars\.folderPath(\s)*\+(\s)*)/g, grunt.config('Config.PUBLIC_ASSETS') + '/');
 					mainJSAssetPath = mainJSAssetPath.replace(/^\//g, '');
 
 					// get file and add to bundle
@@ -51,10 +51,10 @@ module.exports = function(grunt) {
 			}
 
 			// write file
-			grunt.file.write((grunt.config('Config.PUBLIC_DIR') + '/' + bundleFilePath), bundleFile);
+			grunt.file.write((grunt.config('Config.PUBLIC_ASSETS') + '/' + bundleFilePath), bundleFile);
 			console.log('Created bundle file', bundleFileName);
 		}
 
-		grunt.file.write(grunt.config('Config.PUBLIC_DIR') + '/js/main.js', mainJS);
+		grunt.file.write(grunt.config('Config.PUBLIC_ASSETS') + '/js/main.js', mainJS);
 	});
 };

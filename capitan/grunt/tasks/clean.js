@@ -10,22 +10,22 @@ module.exports = {
 		},
 		src: [
 			'<%= Config.PRIVATE_DIR %>/fonts/',
-			'<%= Config.PUBLIC_DIR %>/capitan.png',
+			'<%= Config.PUBLIC_ASSETS %>/capitan.png',
 			'./temp/',
 			'../README.md',
 			'../LICENSE'
 		]
 	},
 	globalJsInPublicFolder: [
-		'<%= Config.PUBLIC_DIR %>/js/global.js'
+		'<%= Config.PUBLIC_ASSETS %>/js/global.js'
 	],
 	bundleFolder:  {
 		options: {
 			'force': true
 		},
 		src: [
-			'<%= Config.PUBLIC_DIR %>/js/bundle/*',
-			'<%= Config.PUBLIC_DIR %>/css/bundle/*'
+			'<%= Config.PUBLIC_ASSETS %>/js/bundle/*',
+			'<%= Config.PUBLIC_ASSETS %>/css/bundle/*'
 		]
 	},
 	zipTplFolder: [

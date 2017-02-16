@@ -42,12 +42,15 @@ Config.syncRoutes = Config.systemPaths.route;
  */
 Config.ROOT_DIR = Config.systemPaths.root;
 Config.PRIVATE_DIR = Config.systemPaths.private;
-Config.PUBLIC_DIR = Config.ROOT_DIR + '/' + Config.systemPaths.public;
-Config.LIVE_URL = Config.systemPaths.liveURL + '/' + Config.systemPaths.public;
+Config.PUBLIC_DIR = Config.ROOT_DIR + Config.systemPaths.public;
+Config.PUBLIC_APP = Config.PUBLIC_DIR + Config.systemPaths.app;
+Config.PUBLIC_ASSETS = Config.PUBLIC_DIR + Config.systemPaths.assets;
+Config.LIVE_URL = Config.systemPaths.liveURL + Config.systemPaths.assets;
 Config.SRC_DIR = Config.PRIVATE_DIR + '/' + Config.srcFolderName;
 Config.BUILD_DIR = Config.PRIVATE_DIR + '/' + Config.buildFolderName;
 Config.ZIP_PUBLIC_FOLDER = '_' + Config.PKG_NAME + '_';
 Config.PRIVATE_JS_VENDOR = Config.PRIVATE_DIR + '/js/libs/vendor';
+
 
 /**
  * This is a collection of file patterns that refer to our app code (the

@@ -9,14 +9,14 @@ module.exports = {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/sass',
 		src: ['**/*.scss'],
-		dest: '<%= Config.PUBLIC_DIR %>/css',
+		dest: '<%= Config.PUBLIC_ASSETS %>/css',
 		ext: '.css'
 	},
 	component: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/components',
 		src: ['**/*.scss'],
-		dest: '<%= Config.PUBLIC_DIR %>/components',
+		dest: '<%= Config.PUBLIC_APP %>/components',
 		ext: '.css'
 	}
 };

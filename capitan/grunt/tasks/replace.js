@@ -48,6 +48,10 @@ module.exports = {
 			{
 				from: '%%project%%',
 				to: '<%= Config.PKG_NAME %>'
+			},
+			{
+				from: '%%publicComponents%%',
+				to: '<%= Config.systemPaths.liveURL %>' + '<%= Config.systemPaths.app %>'
 			}
 		]
 	},
@@ -59,7 +63,7 @@ module.exports = {
 		replacements: [
 			{
 				from: '%%public%%',
-				to: '<%= Config.PUBLIC_DIR %>'
+				to: '<%= Config.PUBLIC_ASSETS %>'
 			},
 			{
 				from: '%%private%%',
@@ -101,13 +105,13 @@ module.exports = {
 		replacements: [
 			{
 				from: '<%= grunt.config("Config.LIVE_URL") %>',
-				to: '<%= Config.PUBLIC_DIR %>'
+				to: '<%= Config.PUBLIC_APP %>'
 			}
 		]
 	},
 	importJsStorageKey: {
 		src: [
-			'<%= Config.PUBLIC_DIR %>/js/main.js'
+			'<%= Config.PUBLIC_ASSETS %>/js/main.js'
 		],
 		overwrite: true,
 		replacements: [
@@ -119,8 +123,8 @@ module.exports = {
 	},
 	deleteCssBlock: {
 		src: [
-			'<%= Config.PUBLIC_DIR %>/css/*.css',
-			'<%= Config.PUBLIC_DIR %>/components/*.css'
+			'<%= Config.PUBLIC_ASSETS %>/css/*.css',
+			'<%= Config.PUBLIC_APP %>/components/*.css'
 		],
 		overwrite: true,
 		replacements: [
@@ -132,11 +136,11 @@ module.exports = {
 	},
 	deleteJsBlock: {
 		src: [
-			'<%= Config.PUBLIC_DIR %>/js/*.js',
-			'<%= Config.PUBLIC_DIR %>/js/handle/*.js',
-			'<%= Config.PUBLIC_DIR %>/components/*.js',
-			'<%= Config.PUBLIC_DIR %>/js/function/*.js',
-			'<%= Config.PUBLIC_DIR %>/js/util/*.js'
+			'<%= Config.PUBLIC_ASSETS %>/js/*.js',
+			'<%= Config.PUBLIC_ASSETS %>/js/handle/*.js',
+			'<%= Config.PUBLIC_APP %>/components/*.js',
+			'<%= Config.PUBLIC_ASSETS %>/js/function/*.js',
+			'<%= Config.PUBLIC_ASSETS %>/js/util/*.js'
 		],
 		overwrite: true,
 		replacements: [

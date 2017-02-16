@@ -12,7 +12,7 @@ module.exports = {
 	bsFiles: {
 		src: [
 			'<%= Config.PRIVATE_DIR %>/templates/styleguide.html',
-			'<%= Config.PUBLIC_DIR %>/js/main.js'
+			'<%= Config.PUBLIC_ASSETS %>/js/main.js'
 		]
 	},
 	options: {

@@ -9,9 +9,11 @@
     ],
 	"root": "..",
     "private": "src",
-    "public": "dist",
+    "public": "/dist",
+    "app": "",
+    "assets": "",
     "liveURL": "",
     "route": {
-      "/dist": "../dist"
+      "/": "../dist"
     }
 }

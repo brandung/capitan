@@ -9,9 +9,11 @@
     ],
 	"root": "..",
     "private": "src",
-    "public": "public",
+    "public": "/public",
+    "app": "",
+    "assets": "",
     "liveURL": "",
     "route": {
-      "/public": "../public/"
+      "/": "../public/"
     }
 }

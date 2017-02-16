@@ -24,32 +24,32 @@ module.exports = {
 	},
 	component: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/components/',
+		cwd: '<%= Config.PUBLIC_APP %>/components/',
 		src: ['**/*.js'],
-		dest: '<%= Config.PUBLIC_DIR %>/components/'
+		dest: '<%= Config.PUBLIC_APP %>/components/'
 	},
 	global: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/js/',
+		cwd: '<%= Config.PUBLIC_ASSETS %>/js/',
 		src: ['**/*.js', '!bundle/*.js', '!**/main.js', '!libs/**/*.js'],
-		dest: '<%= Config.PUBLIC_DIR %>/js/'
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/'
 	},
 	bra: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/js/libs/bra',
+		cwd: '<%= Config.PUBLIC_ASSETS %>/js/libs/bra',
 		src: ['**/*.js'],
-		dest: '<%= Config.PUBLIC_DIR %>/js/libs/bra'
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/libs/bra'
 	},
 	bundle: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/js/bundle',
+		cwd: '<%= Config.PUBLIC_ASSETS %>/js/bundle',
 		src: ['**/*.js'],
-		dest: '<%= Config.PUBLIC_DIR %>/js/bundle'
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/bundle'
 	},
 	mainJS: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/js/',
+		cwd: '<%= Config.PUBLIC_ASSETS %>/js/',
 		src: ['main.js'],
-		dest: '<%= Config.PUBLIC_DIR %>/js/'
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/'
 	}
 };

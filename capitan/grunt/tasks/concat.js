@@ -10,13 +10,13 @@ module.exports = {
 			'<%= Config.PRIVATE_DIR %>/js/libs/vendor/basket/basket.full.custom.min.js',
 			'<%= Config.PRIVATE_DIR %>/js/global.js'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/js/main.js'
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/main.js'
 	},
 
 	mainVendorJS: {
 		src: [
 			'<%= Config.requiredVendorJSArr %>'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/js/cap.required-vendor.min.js'
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/cap.required-vendor.min.js'
 	}
 };

@@ -9,8 +9,10 @@
     ],
 	"root": "..",
     "private": "src",
-    "public": "Resources/Public",
-    "liveURL": "/typo3conf/ext/%%repo%%",
+    "public": "/Resources/Public",
+    "app": "",
+    "assets": "",
+    "liveURL": "/typo3conf/ext/%%repo%%/Resources/Public",
     "route": {
         "/Resources": "../Resources",
         "/typo3conf/ext/%%repo%%/Resources": "../Resources/"

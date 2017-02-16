@@ -1,0 +1,21 @@
+{
+    "folder": [
+		"../dist/app",
+		"../dist/app/components",
+        "../dist/assets/css",
+        "../dist/assets/fonts",
+        "../dist/assets/img/",
+        "../dist/assets/js/libs/bra",
+        "../dist/assets/js/libs/vendor"
+    ],
+	"root": "..",
+    "private": "src",
+    "public": "/dist",
+	"app": "/app",
+	"assets": "/assets",
+    "liveURL": "",
+    "route": {
+      "/assets": "../dist/assets",
+      "/app": "../dist/app"
+    }
+}

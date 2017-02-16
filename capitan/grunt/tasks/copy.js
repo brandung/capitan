@@ -8,13 +8,13 @@ module.exports = {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/fonts/',
 		src: '**',
-		dest: '<%= Config.PUBLIC_DIR %>/fonts/'
+		dest: '<%= Config.PUBLIC_ASSETS %>/fonts/'
 	},
 	privateRootFilesToRoot: {
 		expand: true,
 		cwd: 'temp/',
 		src: '**',
-		dest: '<%= Config.PUBLIC_DIR %>/',
+		dest: '<%= Config.PUBLIC_ASSETS %>/',
 		flatten: true,
 		dot: true
 	},
@@ -22,21 +22,21 @@ module.exports = {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/js/util/',
 		src: '*',
-		dest: '<%= Config.PUBLIC_DIR %>/js/util/',
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/util/',
 		flatten: true
 	},
 	privateHandlerToPublicFolder: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/js/handle/',
 		src: '*',
-		dest: '<%= Config.PUBLIC_DIR %>/js/handle/',
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/handle/',
 		flatten: true
 	},
 	privateFunctionToPublicFolder: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/js/function/',
 		src: '*',
-		dest: '<%= Config.PUBLIC_DIR %>/js/function/',
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/function/',
 		flatten: true
 	},
 	privateComponentToPublicFolder: {
@@ -47,14 +47,14 @@ module.exports = {
 			'!*/*.scss',
 			'!*/*.hbs'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/components/',
+		dest: '<%= Config.PUBLIC_APP %>/components/',
 		flatten: false
 	},
 	publicComponentVendorToPublicJSFolder: {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/components/',
 		src: ['*/js/**/*.*'],
-		dest: '<%= Config.PUBLIC_DIR %>/js/',
+		dest: '<%= Config.PUBLIC_ASSETS %>/js/',
 		flatten: false,
 		rename: function(dest, src) {
 			var path = require('path');

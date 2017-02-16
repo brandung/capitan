@@ -7,11 +7,11 @@
 module.exports = {
 	minify: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/css/',
+		cwd: '<%= Config.PUBLIC_ASSETS %>/css/',
 		src: [
 			'**/*.css'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/css/',
+		dest: '<%= Config.PUBLIC_ASSETS %>/css/',
 		ext: '.css',
 		options: {
 			report: 'min'
@@ -19,11 +19,11 @@ module.exports = {
 	},
 	component: {
 		expand: true,
-		cwd: '<%= Config.PUBLIC_DIR %>/components/',
+		cwd: '<%= Config.PUBLIC_APP %>/components/',
 		src: [
 			'**/*.css'
 		],
-		dest: '<%= Config.PUBLIC_DIR %>/components/',
+		dest: '<%= Config.PUBLIC_APP %>/components/',
 		ext: '.css',
 		options: {
 			report: 'min'
