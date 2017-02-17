@@ -14,7 +14,7 @@ module.exports = {
 		expand: true,
 		cwd: 'temp/',
 		src: '**',
-		dest: '<%= Config.PUBLIC_ASSETS %>/',
+		dest: '<%= Config.PUBLIC_DIR %>/',
 		flatten: true,
 		dot: true
 	},
