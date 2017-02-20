@@ -41,5 +41,13 @@ module.exports = {
 			'cap-buildIndex',
 			'compile-handlebars'
 		]
+	},
+	html: {
+		files:  [
+			'<%= Config.PRIVATE_DIR %>/components/**/*.html'
+		],
+		tasks: [
+			'copy:privateComponentToPublicFolder'
+		]
 	}
 };
