@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
+    "connect-history-api-fallback": "^1.3.0",
     "grunt": "^1.0.1",
     "grunt-bower-task": "^0.4.0",
     "grunt-browser-sync": "^2.2.0",
