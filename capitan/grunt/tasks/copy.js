@@ -43,9 +43,10 @@ module.exports = {
 		expand: true,
 		cwd: '<%= Config.PRIVATE_DIR %>/components/',
 		src: [
-			'*/*.*',
-			'!*/*.scss',
-			'!*/*.hbs'
+			'**/*.*',
+			'!*/js/**',
+			'!**/*.scss',
+			'!**/*.hbs'
 		],
 		dest: '<%= Config.PUBLIC_APP %>/components/',
 		flatten: false
