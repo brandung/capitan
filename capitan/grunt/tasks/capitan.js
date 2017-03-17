@@ -58,7 +58,7 @@ module.exports = function(grunt) {
 			}
 		}
 
-		html += '\t\t\t<ul>\n' +
+		html += '\t\t\t</ul>\n' +
 			'\t\t\t{{!-- views@> --}}';
 
 		indexHbsFile = indexHbsFile.replace(indexHbsFile.match(viewsRegex), html);
