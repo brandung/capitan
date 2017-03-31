@@ -35,6 +35,7 @@ module.exports = {
 
 
 	// Post actions for CSS
+	// Post actions for CSS
 	CSS: {
 		options: {
 			processors: [
@@ -48,24 +49,14 @@ module.exports = {
 				})
 			]
 		},
-		default: {
-			expand: true,
-			cwd: '<%= Config.PUBLIC_DIR %>/css/',
-			src: [
-				'**/*.css'
-			],
-			dest: '<%= Config.PUBLIC_DIR %>/css/',
-			ext: '.css'
-		},
-		component: {
-			expand: true,
-			cwd: '<%= Config.PUBLIC_DIR %>/components/',
-			src: [
-				'**/*.css'
-			],
-			dest: '<%= Config.PUBLIC_DIR %>/components/',
-			ext: '.css'
-		}
+		files: [
+			{
+				src: [
+					'<%= Config.PUBLIC_DIR %>/css/**/*.css',
+					'<%= Config.PUBLIC_DIR %>/components/**/*.css'
+				]
+			}
+		]
 	}
 
 };
