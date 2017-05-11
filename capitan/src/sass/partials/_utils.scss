@@ -312,28 +312,23 @@
 }
 
 /** + bootstrap visibility utilities */
-.util-hidden,
-.util-visible-xs,
-.util-visible-sm,
-.util-visible-md,
-.util-visible-lg,
-.util-visible-xl {
+.util-hidden {
 	display: none !important;
 }
 
-$sizes: ('xs', 'sm', 'md', 'lg', 'xl');
+$sizes: (
+	'xs', 'sm', 'md', 'lg', 'xl'
+);
 
 @each $size in $sizes {
-	@include respondMin(point('min-#{$size}')) {
-		.util-visible-#{$size} {
-			display: block !important;
+	.util-visible-#{$size} {
+		@include respondMax(point('min-#{$size}') - pxToEm(1)) {
+			display: none !important;
 		}
+	}
 
-		span.util-visible-#{$size} {
-			display: inline !important;
-		}
-
-		.util-hidden-#{$size} {
+	.util-hidden-#{$size} {
+		@include respondMin(point('min-#{$size}')) {
 			display: none !important;
 		}
 	}
