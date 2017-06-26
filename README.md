@@ -63,7 +63,7 @@ grunt project:finish | Uglify and concatenate your private assets
 grunt project:lint | Lint your html, sass and private js files
 grunt project:export | Do the finish task and export your files for presentation
 grunt create:component --name=[COMPNAME] | Create new component
-grunt create:zip | Do the same as Project:export and ZIP your applikation
+grunt create:zip | Do the same as Project:export and ZIP your application
 grunt create:styleguide | Reads the variables from the Sass Variables-Partial and transports them into the template partials that are part of the components page
 grunt update:grunt | Donwloads the latest workflow files from github and copies them into the corresponding folders. Excluding the following folders:</p><ul><li>capitan/src</li><li>.gitignore</li><li>capitan/grunt/*.js</li><li>capitan/grunt/systems"</li></ul>
 
