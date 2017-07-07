@@ -60,6 +60,15 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 // Gets divided in half for the left and right.
 $grid-gutter-width-half: $grid-gutter-width / 2;
+$grid-columns:               12;
+$grid-gutter-width-base:     $grid-gutter-width;
+$grid-gutter-widths: (
+		xs: $grid-gutter-width-base,
+		sm: $grid-gutter-width-base,
+		md: $grid-gutter-width-base,
+		lg: $grid-gutter-width-base,
+		xl: $grid-gutter-width-base
+);
 
 // map for getBreakpointList() function
 $js-breakpoints: (
