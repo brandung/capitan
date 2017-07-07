@@ -20,7 +20,7 @@ module.exports = {
 		open: 'external',
 		notify: false,
 		injectChanges: false,
-		reloadDelay: 1000,
+		reloadDelay: 0,
 		server: {
 			baseDir: '<%= Config.CWD %>/<%= Config.PRIVATE_DIR %>/templates/',
 			index: 'styleguide.html',
