@@ -38,6 +38,7 @@ module.exports = {
 	// Post actions for CSS
 	CSS: {
 		options: {
+			map: true,
 			processors: [
 				// add fallbacks for rem units
 				require('pixrem')(),
