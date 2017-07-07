@@ -47,7 +47,8 @@ module.exports = {
 				// or any exceeding 2% market share
 				require('autoprefixer')({
 					browsers: ['last 2 versions', '> 2%']
-				})
+				}),
+				require('postcss-flexbugs-fixes')()
 			]
 		},
 		files: [
