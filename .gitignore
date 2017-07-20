@@ -79,6 +79,14 @@ node_modules/
 .AppleDouble
 .LSOverride
 
+### VSCode ###
+.history
+.vscode
+
+### capitan ###
+/capitan/*.zip
+/capitan/_*_
+
 # Icon must end with two \r
 Icon
 
