@@ -150,6 +150,13 @@ basket.require(
 						Capitan.Vars.folderPath + 'components/button/button.css'
 					],
 					unique: '<@unique@>'
+				},{
+					condition: $('#qr-canvas'),
+					fetch: [
+						Capitan.Vars.folderPath + 'js/libs/vendor/qrcode/qrcode.js',
+						Capitan.Vars.folderPath + 'js/function/generateQR.js'
+					],
+					unique: '<@unique@>'
 				}// <@newComponent@>
 			], true);
 		};
