@@ -60,7 +60,6 @@ $grid-columns: 12 !default;
 $grid-gutter-width: 30px !default;
 // Gets divided in half for the left and right.
 $grid-gutter-width-half: $grid-gutter-width / 2;
-$grid-columns:               12;
 $grid-gutter-width-base:     $grid-gutter-width;
 $grid-gutter-widths: (
 		xs: $grid-gutter-width-base,
