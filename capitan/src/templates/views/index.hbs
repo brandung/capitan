@@ -6,6 +6,7 @@
 
 		<main id="main">
 			<h2>Styleguide</h2>
+			<canvas id="qr-canvas"></canvas>
 			<ul>
 				<li><a href="styleguide.html">Styleguide</a></li>
 			</ul>
@@ -18,6 +19,23 @@
 
 	{{#*inline "footer-block"}}
 	{{!-- insert footer if needed --}}
+	<script>
+		
+	</script>
+	<script>
+		(function qrCode() {
+			if (window.location.hostname === 'localhost') {
+				console.info('Please open this page via the external ip to generate a qr code.');
+			} else {
+				var url = window.location.toString();
+				var canvas = document.getElementById('qr-canvas');
+
+				qrcodelib.toCanvas(canvas, url, function(error) {
+					if(error) console.error(error);
+				});
+			}
+		})();
+	</script>
 	{{/inline}}
 
 {{/base}}
