@@ -38,6 +38,7 @@ module.exports = {
 	// Post actions for CSS
 	CSS: {
 		options: {
+			map: true,
 			processors: [
 				// add fallbacks for rem units
 				require('pixrem')(),
@@ -46,7 +47,8 @@ module.exports = {
 				// or any exceeding 2% market share
 				require('autoprefixer')({
 					browsers: ['last 2 versions', '> 2%']
-				})
+				}),
+				require('postcss-flexbugs-fixes')()
 			]
 		},
 		files: [
