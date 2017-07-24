@@ -153,7 +153,8 @@ basket.require(
 				},{
 					condition: $('#qr-canvas'),
 					fetch: [
-						Capitan.Vars.folderPath + 'js/libs/vendor/qrcode/qrcode.js'
+						Capitan.Vars.folderPath + 'js/libs/vendor/qrcode/qrcode.js',
+						Capitan.Vars.folderPath + 'js/function/generateQR.js'
 					],
 					unique: '<@unique@>'
 				}// <@newComponent@>
